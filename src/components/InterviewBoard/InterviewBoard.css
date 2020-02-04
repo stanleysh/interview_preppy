@@ -1,0 +1,10 @@
+.title-card {
+    margin: 20px;
+}
+
+.InterviewBoard {
+    margin: 50px 50px;
+    display: grid;
+    grid-template-columns: 350px 350px 350px;
+    grid-template-rows: 230px 230px 230px;
+}
