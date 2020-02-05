@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+.App-header {
+  font-size: 50px;
+  background-color: #19B9D6;
+  padding: 20px;
+  margin-bottom: 20px;
+  color: white;
+}
+
 
 .App-header-footer {
   height: 50px;

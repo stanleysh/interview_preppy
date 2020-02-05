@@ -2,13 +2,13 @@ import React from 'react';
 import './InterviewCard.css';
 import Card from 'react-bootstrap/Card';
 
-const questionDict = {1: 'Tell me about yourself?', 2: 'Why do you want to work here?', 3: 'Test 3', 4: 'Test 4', 5: 'Test 5', 6: 'Test 6'}
+const questionDict = {1: 'Tell me about yourself?', 2: 'Why do you want to work here?', 3: 'Question 3', 4: 'Question 4', 5: 'Question 5', 6: 'Question 6', 7: 'Question 7', 8: 'Question 8', 9: 'Question 9', 10: 'Question 10'}
 
 
 const InterviewCard = (props) => (
     <div className='InterviewCard'>
         <div className='first'>
-            <Card style={{ width: '200px', height: '200px'}}>
+            <Card style={{ width: '300px', height: '200px'}}>
                 <Card.Body>
                     <h1>Question:</h1>
                     <h2>
