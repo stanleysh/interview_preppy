@@ -1,5 +1,9 @@
 .title-card {
-    margin: 30px 0;
+    margin: 30px;
+}
+
+.InterviewBoard h1 {
+    margin: 30px;
 }
 
 .InterviewBoard-grid {
@@ -7,5 +11,6 @@
     display: grid;
     margin: 0 40px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+
     row-gap: 30px;
 }

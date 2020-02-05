@@ -22,12 +22,10 @@ class App extends Component {
           <p>Interviewer Prepper (we need a better name LOL)</p>
         </header>
         <div className="About">
-          <h2>About</h2>
+          <h1>About</h1>
           <h4>This tool was created to help people get more familiar with interview prep questions, as well as give tips and tricks to help answer certain questions.</h4>
         </div>
-        <div>
-          <InterviewBoard />
-        </div>
+        <InterviewBoard />
       </div>
     );
     }
