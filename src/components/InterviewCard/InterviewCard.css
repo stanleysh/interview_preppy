@@ -2,6 +2,16 @@
     justify-self: center;
 }
 
-.InterviewCard h2{
-    margin-top: 30px;
+.InterviewCards:hover {
+    -webkit-box-shadow: -1px 9px 40px -12px rgba(0,0,0,0,75);
+    -moz-box-shadow: -1px 9px 40px -12px rgba(0,0,0,0,75);
+    box-shadow: -1px 9px 40px -12px rgba(0,0,0,0,75);
+}
+
+.InterviewCard h3{
+    margin-top: 25px;
+}
+
+.practice {
+    font-size: 15px;
 }

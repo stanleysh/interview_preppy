@@ -6,7 +6,6 @@
     text-align: center;
     display: grid;
     margin: 0 40px;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     row-gap: 30px;
 }
