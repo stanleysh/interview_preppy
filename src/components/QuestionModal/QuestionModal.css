@@ -1,0 +1,27 @@
+.modal-body {
+    font-size: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.tip {
+    font-size: 15px;
+    margin: 15px 0;
+    grid-row-start: 3;
+    grid-column-start:1;
+    grid-column-end: 4;
+}
+
+.tip-btn {
+    font-size: 15px;
+    grid-row-start: 2;
+    grid-column-start: 2;
+}
+
+#question {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    text-align: center;
+
+}
