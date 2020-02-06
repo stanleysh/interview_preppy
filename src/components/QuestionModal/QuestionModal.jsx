@@ -8,6 +8,15 @@ import Collapse from 'react-bootstrap/Collapse';
 
 function QuestionModal(props) {
     const [open, setOpen] = useState(false);
+    const [tip, setTip] = useState('Show Tip')
+
+    let showHide = () => {
+        if(open) {
+            setTip('Show Tip')
+        } else {
+            setTip('Hide Tip')
+        }
+    }
 
     return(
         <div className='practiceModal'>
@@ -19,12 +28,12 @@ function QuestionModal(props) {
                     {props.question}
                 </p>
                 <Button 
-                    onClick={() => setOpen(!open)}
+                    onClick={() => {setOpen(!open); showHide()}}
                     aria-controls="tip"
                     aria-expanded={open}
                     className="tip-btn"
                     variant="outline-info"
-                >Show Tip</Button>
+                >{tip}</Button>
                 <Collapse in={open}>
                     <div className="tip">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum massa massa, efficitur at est ut, iaculis hendrerit ante. Pellentesque convallis varius interdum. Praesent nunc dui, dignissim at nisi sit amet, porta blandit nunc. Nunc molestie ligula odio. Aenean sem nisl, accumsan gravida bibendum id, lobortis vitae lorem. Mauris vitae neque dapibus, elementum neque eu, ullamcorper lectus. Fusce laoreet mattis malesuada.
