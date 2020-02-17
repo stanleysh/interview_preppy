@@ -19,7 +19,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <p>Interviewer Prepper (name chang pending)</p>
+          <p>Interviewer Prepper (name change pending)</p>
         </header>
         <div className="About">
           <h1>About</h1>
