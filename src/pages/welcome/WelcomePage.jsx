@@ -1,14 +1,18 @@
 import React from 'react';
 import './WelcomePage.css'
-import { MDBAnimation } from "mdbreact";
+import Button from 'react-bootstrap/Button';
 
-const WelcomePage = (props) => {
+
+const WelcomePage = () => {
 
     return (
         <div>
-            <MDBAnimation type="fadeIn" className='welcomeLogo'>
-                <h1 className='welcome'>Welcome</h1>
-            </MDBAnimation>
+            <h1 className='welcomeLogo fade-in'>Welcome</h1>
+            <div className="navBar">
+                <Button variant="outline-primary navButton" href='/demo'>Demo</Button>
+                <Button variant="outline-primary navButton">Sign-up</Button>
+                <Button variant="outline-primary navButton">Login</Button>
+            </div>
             <div className="About">
                 <h1>About</h1>
                 <h4>This tool was created to help people get more familiar with interview prep questions, as well as give tips and tricks to help answer certain questions.</h4>

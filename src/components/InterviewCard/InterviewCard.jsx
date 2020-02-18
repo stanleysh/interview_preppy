@@ -35,10 +35,10 @@ function InterviewCard(props) {
         centered
         dialogClassName="qModal"
         >
-            <QuestionModal 
-                questionNum = {props.questionNum}
-                question = {questionDict[props.questionNum]}
-                handleClose={handleClose}/>
+        <QuestionModal 
+            questionNum = {props.questionNum}
+            question = {questionDict[props.questionNum]}
+            handleClose={handleClose}/>
         </Modal>
         
     </>
