@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import InterviewBoard from './components/InterviewBoard/InterviewBoard';
+import InterviewBoard from '../../components/InterviewBoard/InterviewBoard';
+import WelcomePage from '../welcome/WelcomePage';
 
 class App extends Component {
   constructor() {
@@ -19,13 +21,16 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <p>Interviewer Prepper (name change pending)</p>
+          <p>Interview Prepper (name change pending)</p>
         </header>
-        <div className="About">
-          <h1>About</h1>
-          <h4>This tool was created to help people get more familiar with interview prep questions, as well as give tips and tricks to help answer certain questions.</h4>
-        </div>
-        <InterviewBoard />
+        <Switch>
+          <Route exact path = '/' render={() =>
+          <WelcomePage/>
+        }/>
+          <Route exact path = '/demo' render={() =>
+           <InterviewBoard />
+        }/>
+        </Switch>
       </div>
     );
     }
