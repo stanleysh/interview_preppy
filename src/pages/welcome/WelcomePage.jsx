@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import './WelcomePage.css'
 import Button from 'react-bootstrap/Button';
 
@@ -9,9 +10,9 @@ const WelcomePage = () => {
         <div>
             <h1 className='welcomeLogo fade-in'>Welcome</h1>
             <div className="navBar">
-                <Button variant="outline-primary navButton" href='/demo'>Demo</Button>
-                <Button variant="outline-primary navButton">Sign-up</Button>
-                <Button variant="outline-primary navButton">Login</Button>
+                <Link to='/demo'><Button variant="outline-info navButton fade-in">Demo</Button></Link>
+                <Button variant="outline-info navButton fade-in">Sign-up</Button>
+                <Button variant="outline-info navButton fade-in">Login</Button>
             </div>
             <div className="About">
                 <h1>About</h1>

@@ -13,15 +13,16 @@ class App extends Component {
     }
   }
 
-  handleCardSelection = (idx) => {
-    // open modal or something
-  }
-
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <p>Interview Prepper (name change pending)</p>
+          <div className='Logo'>
+            <p><a href="/" className="logo-holder">IP</a></p>
+          </div>
+          <div className='banner'>
+            <p>Interview Prepper (name change pending)</p>
+          </div>
         </header>
         <Switch>
           <Route exact path = '/' render={() =>
