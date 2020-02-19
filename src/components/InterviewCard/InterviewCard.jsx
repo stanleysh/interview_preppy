@@ -18,10 +18,9 @@ function InterviewCard(props) {
         <div className='InterviewCard'>
             <Card style={{ width: '300px', height: '200px'}}>
                 <Card.Body>
-                    <Card.Text><h1>Question: {props.questionNum}</h1>
+                    <h1>Question: {props.questionNum}</h1>
                     <h3>{questionDict[props.questionNum]}</h3>
                     
-                    </Card.Text>
                 </Card.Body>
                 <Card.Footer>
                     <Button variant="outline-info" className="practice" onClick={handleShow}>Practice Now</Button>

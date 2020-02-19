@@ -11,8 +11,8 @@ const WelcomePage = () => {
             <h1 className='welcomeLogo fade-in'>Welcome</h1>
             <div className="navBar">
                 <Link to='/demo'><Button variant="outline-info navButton fade-in">Demo</Button></Link>
-                <Button variant="outline-info navButton fade-in">Sign-up</Button>
-                <Button variant="outline-info navButton fade-in">Login</Button>
+                <Link to='/signup'><Button variant="outline-info navButton fade-in">Sign-up</Button></Link>
+                <Link to='/login'><Button variant="outline-info navButton fade-in">Login</Button></Link>
             </div>
             <div className="About">
                 <h1>About</h1>

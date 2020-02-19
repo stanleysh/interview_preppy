@@ -14,20 +14,9 @@
 
 .Logo {
   justify-self: left;
-  margin-left: 20px;
-
+  margin-left: 0px;
 }
 
-.logo-holder {
-  color: white;
-  text-decoration: none;
-}
-
-.logo-holder:hover {
-  color: white; 
-  text-decoration: none; 
-  cursor: pointer;  
-}
 
 .App-header-footer {
   height: 50px;
