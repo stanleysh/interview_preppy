@@ -7,7 +7,8 @@ const userSchema = new mongoose.Schema({
     name: String,
     email: {type: String, required: true, lowercase: true, unique: true},
     password: String,
-    questions: [{type: Schema.Types.Objectid, ref: 'Questions'}]
+    // questions: [{type: Schema.Types.Objectid, ref: 'Questions'}],
+    completed: [{type: Number}]
 }, {
     timestamps: true
 });
