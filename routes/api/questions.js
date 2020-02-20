@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const scoresCtrl = require('../../controllers/scores');
+const scoresCtrl = require('../../controllers/questions');
 
-router.get('/', scoresCtrl.highScores);
+router.get('/', questionsCtrl.highScores);
 
 /*---------- Protected Routes ----------*/
 // Process the token for only the routes below
 router.use(require('../../config/auth'));
-router.post('/', checkAuth, scoresCtrl.create);
+router.post('/', checkAuth, questionsCtrl.create);
 
 /*----- Helper Functions -----*/
 function checkAuth(req, res, next) {
