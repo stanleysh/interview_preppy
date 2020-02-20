@@ -7,12 +7,14 @@ import WelcomePage from '../welcome/WelcomePage';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
+import NavBar from '../../components/NavBar/NavBar';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       currentQuestion: null,
+      user: userService.getUser()
     }
   }
 
@@ -29,13 +31,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <div className='Logo'>
-            <Link to="/" className="logo-holder"><img src="https://cdn.auth0.com/blog/react-js/react.png" alt="fart" width="75px"/></Link>
-          </div>
-          <div className='banner'>
-            <p>Interview Prepper (name change pending)</p>
-          </div>
+        <header>
+          <NavBar 
+          handleLogout = {this.handleLogout}
+          user = {this.state.user}
+          />
         </header>
         <Switch>
           <Route exact path = '/' render={() =>

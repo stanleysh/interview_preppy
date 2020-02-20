@@ -1,27 +1,43 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+import './NavBar.css';
 
 function NavBar(props) {
     let nav = props.user ?
-    <div>
+    <div className="App-header">
         <div className='Logo'>
-            <Link to="/" className="logo-holder"><img src="https://cdn.auth0.com/blog/react-js/react.png" alt="fart" width="75px"/></Link>
+            <Link to="/" className="logo-holder"><img src="https://cdn.auth0.com/blog/react-js/react.png" alt="logo" width="75px"/></Link>
         </div>
-          <div className='banner'>
+        <div className='banner'>
             <p>Interview Prepper (name change pending)</p>
-          </div>
+        </div>
+        <div className='right-info'>
+            <p>Welcome {props.user.name}</p>
+            <Link to='/'><Button variant="info" onClick={props.handleLogout}>
+                Logout
+            </Button></Link>
+        </div>
     </div>
     :
-    <div>
+    <div className="App-header">
         <div className='Logo'>
-            <Link to="/" className="logo-holder"><img src="https://cdn.auth0.com/blog/react-js/react.png" alt="fart" width="75px"/></Link>
+            <Link to="/" className="logo-holder"><img src="https://cdn.auth0.com/blog/react-js/react.png" alt="logo" width="75px"/></Link>
         </div>
-          <div className='banner'>
+        <div className='banner'>
             <p>Interview Prepper (name change pending)</p>
-          </div>
+        </div>
+        <div className='right-info'>
+            <Link to='/signup'><Button variant="outline-info navButton fade-in">Sign-up</Button></Link>
+            <Link to='/login'><Button variant="outline-info navButton fade-in">Login</Button></Link>
+        </div>
     </div>
+   
     return (
         <>
+            {nav}
         </>
-    )
-}
+    );
+};
+
+export default NavBar;
