@@ -22,7 +22,7 @@ module.exports = {
   async function login(req, res) {
     try {
       const user = await User.findOne({email: req.body.email});
-      if (!user) return res.status(401).json({err: 'bad credentials'});
+      if (!user) return res.status(401).json({err: 'shit the bed'});
       user.comparePassword(req.body.pw, (err, isMatch) => {
         if (isMatch) {
           const token = createJWT(user);
