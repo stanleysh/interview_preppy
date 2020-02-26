@@ -4,22 +4,26 @@ import Button from 'react-bootstrap/Button';
 import './NavBar.css';
 
 function NavBar(props) {
-    let nav = props.user ?
-    <div className="App-header">
-        <div className='Logo'>
-            <Link to="/" className="logo-holder"><img src="https://cdn.auth0.com/blog/react-js/react.png" alt="logo" width="75px"/></Link>
+    if (props.user) {
+        return (
+        <div className="App-header">
+            <div className='Logo'>
+                <Link to="/" className="logo-holder"><img src="https://cdn.auth0.com/blog/react-js/react.png" alt="logo" width="75px"/></Link>
+            </div>
+            <div className='banner'>
+                <p>Interview Prepper (name change pending)</p>
+            </div>
+            <div className='right-info'>
+                <p>Welcome {props.user.name}</p>
+                <Link to='/'><Button variant="info" className="nav-buttons" onClick={props.handleLogout}>
+                    Logout
+                </Button></Link>
+            </div>
         </div>
-        <div className='banner'>
-            <p>Interview Prepper (name change pending)</p>
-        </div>
-        <div className='right-info'>
-            <p>Welcome {props.user.name}</p>
-            <Link to='/'><Button variant="info" className="nav-buttons" onClick={props.handleLogout}>
-                Logout
-            </Button></Link>
-        </div>
-    </div>
-    :
+        )
+    }
+    
+    return (
     <div className="App-header">
         <div className='Logo'>
             <Link to="/" className="logo-holder"><img src="https://cdn.auth0.com/blog/react-js/react.png" alt="logo" width="75px"/></Link>
@@ -32,12 +36,7 @@ function NavBar(props) {
             <Link to='/login'><Button variant="info" className="nav-buttons">Login</Button></Link>
         </div>
     </div>
-   
-    return (
-        <>
-            {nav}
-        </>
-    );
+    )
 };
 
 export default NavBar;
