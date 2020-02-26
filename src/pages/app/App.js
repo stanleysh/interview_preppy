@@ -13,7 +13,6 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      currentQuestion: null,
       user: userService.getUser()
     }
   }

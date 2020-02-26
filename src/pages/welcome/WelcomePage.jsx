@@ -9,10 +9,10 @@ const WelcomePage = () => {
     return (
         <div>
             <h1 className='welcomeLogo fade-in'>Welcome</h1>
-            <div className="navBar">
-                <Link to='/demo'><Button variant="outline-info navButton fade-in">Demo</Button></Link>
-                <Link to='/signup'><Button variant="outline-info navButton fade-in">Sign-up</Button></Link>
-                <Link to='/login'><Button variant="outline-info navButton fade-in">Login</Button></Link>
+            <div className="welcome-bar">
+                <Link to='/demo'><Button variant="outline-info welcome-btn fade-in">Demo</Button></Link>
+                <Link to='/signup'><Button variant="outline-info welcome-btn fade-in">Sign-up</Button></Link>
+                <Link to='/login'><Button variant="outline-info welcome-btn fade-in">Login</Button></Link>
             </div>
             <div className="About">
                 <h1>About</h1>

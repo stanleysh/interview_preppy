@@ -12,3 +12,8 @@
     justify-self: left;
     margin-left: 0px;
   }
+
+  .nav-buttons {
+      margin-right: 10px;
+      font-size: 20px;
+  }

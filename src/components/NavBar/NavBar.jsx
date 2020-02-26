@@ -14,7 +14,7 @@ function NavBar(props) {
         </div>
         <div className='right-info'>
             <p>Welcome {props.user.name}</p>
-            <Link to='/'><Button variant="info" onClick={props.handleLogout}>
+            <Link to='/'><Button variant="info" className="nav-buttons" onClick={props.handleLogout}>
                 Logout
             </Button></Link>
         </div>
@@ -28,8 +28,8 @@ function NavBar(props) {
             <p>Interview Prepper (name change pending)</p>
         </div>
         <div className='right-info'>
-            <Link to='/signup'><Button variant="outline-info navButton fade-in">Sign-up</Button></Link>
-            <Link to='/login'><Button variant="outline-info navButton fade-in">Login</Button></Link>
+            <Link to='/signup'><Button variant="info" className="nav-buttons">Sign-up</Button></Link>
+            <Link to='/login'><Button variant="info" className="nav-buttons">Login</Button></Link>
         </div>
     </div>
    
