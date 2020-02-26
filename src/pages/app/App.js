@@ -42,7 +42,8 @@ class App extends Component {
         </header>
         <Switch>
           <Route exact path = '/' render={() =>
-          <WelcomePage/>
+          <WelcomePage
+          user = {this.state.user}/>
         }/>
           <Route exact path = '/demo' render={() =>
            <InterviewBoard />

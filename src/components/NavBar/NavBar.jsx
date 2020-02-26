@@ -13,7 +13,7 @@ function NavBar(props) {
             <div className='banner'>
                 <p>Interview Prepper (name change pending)</p>
             </div>
-            <div className='right-info'>
+            <div className='right-info name'>
                 <p>Welcome {props.user.name}</p>
                 <Link to='/'><Button variant="info" className="nav-buttons" onClick={props.handleLogout}>
                     Logout
