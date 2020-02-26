@@ -8,6 +8,7 @@ import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
 import NavBar from '../../components/NavBar/NavBar';
+import AboutPage from '../AboutPage/AboutPage';
 
 class App extends Component {
   constructor() {
@@ -60,7 +61,10 @@ class App extends Component {
           history={history}
           handleLogin={this.handleLogin}
           />
-      }/>
+        }/>
+        <Route exact path = '/about' render={() =>
+          <AboutPage/>
+        }/>
         </Switch>
       </div>
     );
