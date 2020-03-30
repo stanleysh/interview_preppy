@@ -10,7 +10,7 @@ const WelcomePage = (props) => {
             <div>
                 <h1 className='welcomeLogo fade-in'>Welcome</h1>
                 <div className="welcome-bar">
-                    <Link to='/demo'><Button variant="outline-info welcome-btn fade-in">Your Questions</Button></Link>
+                    <Link to='/demo'><Button variant="outline-info welcome-btn fade-in" className='your-questions'>Your Questions</Button></Link>
                     <Link to='/signup'><Button variant="outline-info welcome-btn fade-in">Sign-up</Button></Link>
                     <Link to='/login'><Button variant="outline-info welcome-btn fade-in">Login</Button></Link>
                 </div>

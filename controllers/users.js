@@ -27,6 +27,8 @@ module.exports = {
         if (isMatch) {
           const token = createJWT(user);
           res.json({token});
+          console.log(token)
+          console.log(user.email);
         } else {
           return res.status(401).json({err: 'bad credentials'});
         }

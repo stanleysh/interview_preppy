@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative;
 }
 
 code {
@@ -14,8 +15,21 @@ code {
 
 footer {
   text-align: center;
-  position: fixed;
-  bottom: 0;
+  position: absolute;
   left: 0;
   right: 0;
+  margin: 20px 0px;
+}
+
+footer a{
+  color: #17a2b8;
+  font-size: 20px;
+}
+
+.fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
 }
