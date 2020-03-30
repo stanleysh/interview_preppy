@@ -2,18 +2,14 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './LoginPage.css';
 import userService from '../../utils/userService';
-import Modal from 'react-bootstrap/Modal';
 
 class LoginPage extends Component {
   
   state = {
     email: '',
-    pw: '',
-    show: false,
+    pw: ''
   };
 
-  handleClose = () => this.setState({show: false});
-  showModal = () => this.setState({show: true});
 
 
   handleChange = (e) => {
@@ -27,10 +23,13 @@ class LoginPage extends Component {
     e.preventDefault();
     try {
       await userService.login(this.state);
-      this.props.handleLogin();
+      // Let <App> know a user has signed up!
+      this.props.handleSignupOrLogin();
+      // Successfully signed up - show GamePage
       this.props.history.push('/');
     } catch (err) {
-      this.showModal();
+      // Use a modal or toast in your apps instead of alert
+      alert('Invalid Credentials!');
     }
   }
 
@@ -56,11 +55,6 @@ class LoginPage extends Component {
             </div>
           </div>
         </form>
-        <Modal show = {this.state.show} >
-          <Modal.body>
-            <p>Invalid Credentials</p>
-          </Modal.body>
-        </Modal>
       </div>
     );
   }

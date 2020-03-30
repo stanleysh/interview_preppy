@@ -23,12 +23,8 @@ class App extends Component {
     this.setState({ user: null });
   }
 
-  handleSignup = () => {
+  handleSignupOrLogin = () => {
     this.setState({user: userService.getUser()});
-  }
-
-  handleLogin = () => {
-    this.setState({user: userService.login()});
   }
 
 
@@ -52,14 +48,14 @@ class App extends Component {
         <Route exact path = '/signup' render={({history}) =>
           <SignupPage
           history={history}
-          handleSignup={this.handleSignup}
+          handleSignupOrLogin={this.handleSignupOrLogin}
         />
         
         }/>
         <Route exact path = '/login' render={({history}) =>
           <LoginPage
           history={history}
-          handleLogin={this.handleLogin}
+          handleSignupOrLogin={this.handleSignupOrLogin}
           />
         }/>
         <Route exact path = '/about' render={() =>

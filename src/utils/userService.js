@@ -36,7 +36,7 @@ function login(creds) {
   .then(res => {
     // Valid login if we have a status of 2xx (res.ok)
     if (res.ok) return res.json();
-    throw new Error('Bad Credentials!');
+    throw new Error('Bad Credentials!');  
   })
   .then(({token}) => tokenService.setToken(token));
 }
