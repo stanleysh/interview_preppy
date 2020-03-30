@@ -1,3 +1,24 @@
+
+
+.welcome-bar {
+    margin: auto;
+    margin-top: 30px;
+    display: inline-grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    grid-gap: 15px;
+}
+
+.welcome-bar-logged-in {
+    margin-top: 30px;
+    display: inline-grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 210px 1fr;
+    justify-items: center;
+    grid-gap: 15px;
+}
+
 .welcomeLogo {
     margin: auto;
     margin-top: 125px;
@@ -5,24 +26,25 @@
     font-size: 8rem;
     font-weight: 700;
     color:#17a2b8;
-}
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-column-end: 4;
 
-.welcome-bar {
-    margin: auto;
-    margin-top: 30px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    text-align: center;
-    max-width: 30%;
-}
-
-.your-questions {
-    margin-right: 17px;
 }
 
 .welcome-btn {
     font-size: 25px;
     justify-self: center;
+}
+
+.welcome-btn-questions {
+    font-size: 25px;
+    justify-self: end;
+}
+
+.welcome-btn-logout {
+    font-size: 25px;
+    justify-self: start;
 }
 
 .fade-in {
