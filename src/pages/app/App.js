@@ -21,6 +21,7 @@ class App extends Component {
   handleLogout = () => {
     userService.logout();
     this.setState({ user: null });
+    
   }
 
   handleSignupOrLogin = () => {
@@ -40,7 +41,9 @@ class App extends Component {
         <Switch>
           <Route exact path = '/' render={() =>
           <WelcomePage
-          user = {this.state.user}/>
+          user = {this.state.user}
+          handleLogout = {this.handleLogout}
+          />
         }/>
           <Route exact path = '/demo' render={() =>
            <InterviewBoard />
