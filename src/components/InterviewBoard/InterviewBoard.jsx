@@ -8,9 +8,9 @@ const InterviewBoard = (props) => (
     <div className = 'InterviewBoard'>
         <h1>Top 20 Asked Questions</h1>
         <div className = 'InterviewBoard-grid'>
-            {numQuestions.map(num =>
+            {numQuestions.map((num, index) =>
                 <InterviewCard 
-                questionNum = {num}
+                questionNum = {index + 1}
                 />
             )}
         </div>
