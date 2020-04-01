@@ -11,7 +11,7 @@ function NavBar(props) {
                 <Link to="/" className="logo-holder"><img src="https://cdn.auth0.com/blog/react-js/react.png" alt="logo" width="75px"/></Link>
             </div>
             <div className='banner'>
-                <p>Interview Prepper (name change pending)</p>
+                <p>Interview Prepper</p>
             </div>
             <div className='right-info name'>
                 <p>Welcome {props.user.name}</p>
@@ -29,7 +29,7 @@ function NavBar(props) {
             <Link to="/" className="logo-holder"><img src="https://cdn.auth0.com/blog/react-js/react.png" alt="logo" width="75px"/></Link>
         </div>
         <div className='banner'>
-            <p>Interview Prepper (name change pending)</p>
+            <p>Interview Prepper</p>
         </div>
         <div className='right-info'>
             <Link to='/signup'><Button variant="info" className="nav-buttons">Sign-up</Button></Link>

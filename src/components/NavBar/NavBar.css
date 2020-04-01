@@ -1,23 +1,27 @@
 .App-header {
-    font-size: 50px;
-    background-color: #17a2b8;
-    padding: 20px;
-    margin-bottom: 20px;
-    color: white;
-    display: grid;
-    grid-template-columns: .1275fr .75fr .1275fr;
-  }
+  font-size: 50px;
+  background-color: #17a2b8;
+  padding: 20px;
+  margin-bottom: 20px;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
   
-  .Logo {
-    justify-self: left;
-    margin-left: 0px;
-  }
+.Logo {
+  justify-self: start;
+  margin-left: 0px;
+}
 
-  .nav-buttons {
-      margin-right: 10px;
-      font-size: 20px;
-  }
+.nav-buttons {
+  margin-right: 10px;
+  font-size: 20px;
+}
 
-  .name {
-    font-size: 20px;
-  }
+.name {
+  font-size: 20px;
+}
+
+.right-info {
+  justify-self: end;
+}
