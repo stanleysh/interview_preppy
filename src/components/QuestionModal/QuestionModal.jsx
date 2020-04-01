@@ -36,7 +36,7 @@ function QuestionModal(props) {
                 >{tip}</Button>
                 <Collapse in={open}>
                     <div className="tip">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum massa massa, efficitur at est ut, iaculis hendrerit ante. Pellentesque convallis varius interdum. Praesent nunc dui, dignissim at nisi sit amet, porta blandit nunc. Nunc molestie ligula odio. Aenean sem nisl, accumsan gravida bibendum id, lobortis vitae lorem. Mauris vitae neque dapibus, elementum neque eu, ullamcorper lectus. Fusce laoreet mattis malesuada.
+                        {props.tip}
                     </div>
                 </Collapse>
             </Modal.Body>

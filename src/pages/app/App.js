@@ -9,6 +9,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
 import NavBar from '../../components/NavBar/NavBar';
 import AboutPage from '../AboutPage/AboutPage';
+import DemoInterviewBoard from '../../components/DemoInterviewBoard/DemoInterviewBoard';
 
 class App extends Component {
   constructor() {
@@ -49,7 +50,7 @@ class App extends Component {
           />
         }/>
           <Route exact path = '/demo' render={() =>
-           <InterviewBoard />
+           <DemoInterviewBoard />
         }/>
         <Route exact path = '/signup' render={({history}) =>
           <SignupPage

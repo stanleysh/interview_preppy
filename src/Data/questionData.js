@@ -1,4 +1,4 @@
-defaultQuestsions = [
+const defaultQuestsions = [
     {
         question: 'Tell me about yourself',
         tips: '',
@@ -142,4 +142,4 @@ defaultQuestsions = [
 
 ]
 
-module.exports = defaultQuestions
+module.exports = defaultQuestsions
