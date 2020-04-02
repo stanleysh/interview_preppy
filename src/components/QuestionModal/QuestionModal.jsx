@@ -7,16 +7,25 @@ import Collapse from 'react-bootstrap/Collapse';
 
 
 function QuestionModal(props) {
-    const [open, setOpen] = useState(false);
-    const [tip, setTip] = useState('Show Tip')
+    const [openTip, showOpenTip] = useState(false);
+    const [openScript, showOpenScript] = useState(false);
+    const [tip, setTip] = useState('Show Tip');
+    const [script, setScript] = useState('Show Script');
 
-    let showHide = () => {
-        if(open) {
-            setTip('Show Tip')
+    let showHideTip = () => {
+        if(openTip) {
+            setTip('Show Tip');
         } else {
-            setTip('Hide Tip')
+            setTip('Hide Tip');
+        };
+    };
+    let showHideScript = () => {
+        if(openScript) {
+            setScript('Show Script')
+        } else {
+            setScript('Hide Script')
         }
-    }
+    };
 
     return(
         <div className='practiceModal'>
@@ -28,15 +37,27 @@ function QuestionModal(props) {
                     {props.question}
                 </p>
                 <Button 
-                    onClick={() => {setOpen(!open); showHide()}}
+                    onClick = {() => {showOpenTip(!openTip); showHideTip()}}
                     aria-controls="tip"
-                    aria-expanded={open}
+                    aria-expanded={openTip}
                     className="tip-btn"
                     variant="outline-info"
                 >{tip}</Button>
-                <Collapse in={open}>
+                <Collapse in={openTip}>
                     <div className="tip">
                         {props.tip}
+                    </div>
+                </Collapse>
+                <Button
+                    onClick = {() => {showOpenScript(!openScript); showHideScript()}}
+                    aria-controls="script"
+                    aria-expanded={openScript}
+                    className={openTip ? "show-tip-script-btn" : "hidden-tip-script-btn" }
+                    variant="outline-info"
+                >{script}</Button>
+                <Collapse in={openScript}>
+                    <div className={openTip ? 'show-tip-script' : 'hidden-tip-script'}>
+                        {props.script}
                     </div>
                 </Collapse>
             </Modal.Body>
