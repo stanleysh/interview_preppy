@@ -7,9 +7,16 @@ import QuestionModal from '../QuestionModal/QuestionModal'
 
 function InterviewCard(props) {
     const [show, setShow] = useState(false);
-    
+
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    let questionPreview;
+    if (props.question.length > 30) {
+        questionPreview = <h3>{props.question.slice(0,30)}...</h3>
+    } else {
+        questionPreview = <h3>{props.question}</h3>
+    }
 
     return (
         <>
@@ -17,8 +24,7 @@ function InterviewCard(props) {
             <Card style={{ width: '300px', height: '200px'}}>
                 <Card.Body>
                     <h1>Question: {props.questionNum}</h1>
-                    <h3>{props.question}</h3>
-                    
+                    {questionPreview}
                 </Card.Body>
                 <Card.Footer>
                     <Button variant="outline-info" className="practice" onClick={handleShow}>Practice Now</Button>

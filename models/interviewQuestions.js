@@ -10,4 +10,4 @@ const interviewQuestionSchema = new mongoose.schema({
     timeStamps: true
 });
 
-module.exports = Mongoose.model("interviewQuestions", interviewQuestionSchema);
+module.exports = Mongoose.model("InterviewQuestions", interviewQuestionSchema);
