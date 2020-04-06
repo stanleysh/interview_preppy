@@ -1,20 +1,29 @@
 const User = require('../models/users');
+const InterviewQuestion = require('../models/interviewQuestions');
 const jwt = require('jsonwebtoken');
 const SECRET = process.env.SECRET;
+const defaultQuestions = require('../src/Data/questionData');
+
 
 module.exports = {
   signup,
-  login
+  login,
+  readInfo
 };
 
 async function signup(req, res) {
   const user = new User(req.body);
+  defaultQuestions.forEach(question => {
+    var newQuestion = new InterviewQuestion(question)
+    user.questions.push(newQuestion);
+  })
   try {
     await user.save();
+    const id = user._id;
     const token = createJWT(user);
+    res.json({id})
     res.json({ token });
   } catch (err) {
-    // Probably a duplicate email
     res.status(400).json(err);
   }
 }
@@ -36,11 +45,16 @@ async function login(req, res) {
   }
 }
 
-/*----- Helper Functions -----*/
+function index(req, res) {
+  const user = User.findById(req.user_id);
+  const name = user.name;
+  res.json({name})
+}
+
 
 function createJWT(user) {
   return jwt.sign(
-    {user}, // data payload
+    {user},
     SECRET,
     {expiresIn: '24h'}
   );

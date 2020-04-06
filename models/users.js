@@ -1,14 +1,13 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
-
 const SALT_ROUNDS = 6;
 
 const userSchema = new mongoose.Schema({
   name: {type: String},
   email: {type: String, required: true, lowercase: true, unique: true},
   password: {type: String},
-  questions: [{type: Schema.Types.ObjectId, ref:'InterviewQuestions'}]
+  questions: [{type: mongoose.Schema.Types.ObjectId, ref:'InterviewQuestions'}]
 }, {
   timestamps: true
 });
