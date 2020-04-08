@@ -1,6 +1,13 @@
 var User = require('../models/users');
 var InterviewQuestion = require('../models/interviewQuestions');
 
+module.exports = {
+    createQuestion,
+    updateQuestion,
+    deleteQuestion,
+    show
+}
+
 function createQuestion(req, res) {
     const question = new InterviewQuestion(req.body);
 
@@ -15,6 +22,11 @@ function createQuestion(req, res) {
         });
     });
 };
+
+async function show(req, res) {
+    const questions = await InterviewQuestion.find({})
+    res.json(questions)
+}
 
 function readQuestions(req, res) {
     User.findById(req.user._id, function(err, user) {
@@ -45,8 +57,3 @@ function deleteQuestion(req, res) {
     });
 };
 
-module.exports = [
-    createQuestion,
-    updateQuestion,
-    deleteQuestion
-]

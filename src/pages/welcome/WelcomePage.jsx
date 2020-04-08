@@ -9,7 +9,7 @@ const WelcomePage = (props) => {
         return (
             <div className="welcome-bar-logged-in">
                 <h1 className='welcomeLogo fade-in'>Welcome</h1>
-                <Link to='/demo'><Button variant="outline-info welcome-btn-questions fade-in" className='your-questions'>Your Questions</Button></Link>
+                <Link to='/questions'><Button variant="outline-info welcome-btn-questions fade-in" className='your-questions'>Your Questions</Button></Link>
                 <Link to='/'><Button variant="outline-info welcome-btn-logout fade-in" onClick={props.handleLogout}>Logout</Button></Link>
             </div>
         )

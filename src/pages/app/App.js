@@ -9,6 +9,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
 import NavBar from '../../components/NavBar/NavBar';
 import AboutPage from '../AboutPage/AboutPage';
+import QuestionPage from '../QuestionPage/QuestionPage';
 import DemoInterviewBoard from '../../components/DemoInterviewBoard/DemoInterviewBoard';
 
 class App extends Component {
@@ -51,6 +52,11 @@ class App extends Component {
         }/>
           <Route exact path = '/demo' render={() =>
            <DemoInterviewBoard />
+        }/>
+        <Route exact path = '/questions' render={() =>
+          <QuestionPage
+          user = {this.state.user}
+          />
         }/>
         <Route exact path = '/signup' render={({history}) =>
           <SignupPage

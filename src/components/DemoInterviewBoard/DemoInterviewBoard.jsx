@@ -18,7 +18,6 @@ const DemoInterviewBoard = (props) => (
             )}
         </div>
     </div>
-    
 );
 
 export default DemoInterviewBoard;

@@ -8,20 +8,22 @@ const defaultQuestions = require('../src/Data/questionData');
 module.exports = {
   signup,
   login,
-  readInfo
+  index,
+  userLookup,
+  getQuestions
 };
 
 async function signup(req, res) {
   const user = new User(req.body);
   defaultQuestions.forEach(question => {
     var newQuestion = new InterviewQuestion(question)
+    newQuestion.save();
     user.questions.push(newQuestion);
   })
   try {
     await user.save();
     const id = user._id;
     const token = createJWT(user);
-    res.json({id})
     res.json({ token });
   } catch (err) {
     res.status(400).json(err);
@@ -45,11 +47,27 @@ async function login(req, res) {
   }
 }
 
-function index(req, res) {
-  const user = User.findById(req.user_id);
-  const name = user.name;
-  res.json({name})
+async function index(req, res) {
+  const users = await User.find({});
+  res.json(users);
 }
+
+async function userLookup(req, res) {
+  const user = await User.findById(req.params.id);
+  res.json(user);
+}
+
+function getQuestions(req, res) {
+  User.findById(req.params.id)
+  .populate('questions')
+  .exec((err, user) => {
+    if(err) {
+      console.log("index error: " + err);
+      res.sendStatus(500);
+    }
+    res.json(user);
+  });
+};
 
 
 function createJWT(user) {

@@ -5,7 +5,7 @@ const interviewQuestionSchema = new mongoose.Schema({
     tips: {type: String},
     script: {type: String},
     completed: {type: Boolean, require: true},
-    timer: {type: Number} 
+    timer: {type: Number}
 }, {
     timeStamps: true
 });

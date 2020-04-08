@@ -1,10 +1,10 @@
 import React from 'react';
-import './InterviewBoard.css';
-import InterviewCard from '../InterviewCard/InterviewCard';
+import './QuestionPage.css';
+import InterviewCard from '../../components/InterviewCard/InterviewCard';
 const defaultQuestions = require('../../Data/questionData');
 
 
-const InterviewBoard = (props) => (
+const QuestionPage = (props) => (
 <div className = 'InterviewBoard'>
         <h1>Your questions</h1>
         <div className = 'InterviewBoard-grid'>
@@ -22,4 +22,4 @@ const InterviewBoard = (props) => (
     
 );
 
-export default InterviewBoard;
+export default QuestionPage;

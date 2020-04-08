@@ -3,7 +3,8 @@ const router = express.Router();
 const questionsCtrl = require('../../controllers/questions');
 
 router.use(require('../../config/auth'));
-router.get('/user._id', checkAuth, questionsCtrl);
+// router.get('/user._id', checkAuth, questionsCtrl);
+router.get('/', questionsCtrl.show);
 
 function checkAuth(req, res, next) {
   if (req.user) return next();
