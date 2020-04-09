@@ -6,12 +6,11 @@ module.exports = {
     updateQuestion,
     deleteQuestion,
     showAll,
-    questions
+    showUserQuestions
 }
 
 function createQuestion(req, res) {
     const question = new InterviewQuestion(req.body);
-
     User.findById(req.user._id, function(err, user) {
         user.questions.push(question);
         user.save(function(err) {
@@ -24,12 +23,13 @@ function createQuestion(req, res) {
     });
 };
 
+// Mainly for development purposes
 async function showAll(req, res) {
     const questions = await InterviewQuestion.find({})
     res.json(questions)
 }
 
-async function questions(req, res) {
+async function showUserQuestions(req, res) {
     try {
         const questions = await InterviewQuestion.find({'user': req.user._id});
         res.json(questions);
@@ -37,12 +37,6 @@ async function questions(req, res) {
         res.json(err);
     };
 };
-
-function readQuestions(req, res) {
-    User.findById(req.user._id, function(err, user) {
-        
-    })
-}
 
 function updateQuestion(req, res) {
     InterviewQuestion.findById(req.q_id, function(err, question) {
