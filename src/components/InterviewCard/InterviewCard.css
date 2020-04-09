@@ -13,3 +13,7 @@
 .qModal {
     min-width: 40%;
 }
+
+.InterviewBoard .questionTitle {
+    margin: 30px;
+}

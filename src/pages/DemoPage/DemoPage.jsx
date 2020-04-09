@@ -1,6 +1,7 @@
 import React from 'react';
-import './DemoInterviewBoard.css';
-import InterviewCard from '../InterviewCard/InterviewCard';
+import './DemoPage.css';
+import InterviewCard from '../../components/InterviewCard/InterviewCard';
+import NewQuestion from '../../components/NewQuestion/NewQuestion';
 const defaultQuestions = require('../../Data/questionData');
 
 const DemoInterviewBoard = (props) => (
@@ -16,6 +17,7 @@ const DemoInterviewBoard = (props) => (
                 questionNum = {index + 1}
                 />
             )}
+            <NewQuestion/>
         </div>
     </div>
 );

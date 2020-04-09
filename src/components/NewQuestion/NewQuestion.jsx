@@ -1,46 +1,38 @@
-import React, { useState } from 'react';
-import './InterviewCard.css';
+import React, {useState} from 'react';
+import './NewQuestion.css';
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import QuestionModal from '../QuestionModal/QuestionModal'
+import Button from 'react-bootstrap/Button';
+import NewUpdateModal from '../../components/NewUpdateModal/NewUpdateModal';
 
-function InterviewCard(props) {
+function NewQuestion(props) {
     const [show, setShow] = useState(false);
-    // const [edit, setEdit] = useState(false);
-
+    
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    // const handleEdit = () => setEdit(!edit);
-
-    let questionPreview;
-    if (props.question.length > 30) {
-        questionPreview = <h3>{props.question.slice(0,30)}...</h3>
-    } else {
-        questionPreview = <h3>{props.question}</h3>
-    }
 
     return (
         <>
         <div className='InterviewCard'>
             <Card style={{ width: '300px', height: '200px'}}>
                 <Card.Body>
-                    <h1 className='questionTitle'>Question: {props.questionNum}</h1>
-                    {questionPreview}
+                    <h1 className='newQuestion'>New Question</h1>
+                    <img src='https://picaflor-azul.com/images/plus-circle1.png' className="newQuestionLogo" alt="Add question logo"/>
                 </Card.Body>
                 <Card.Footer>
-                    <Button variant="outline-info" className="practice" onClick={handleShow}>Practice Now</Button>
+                    <Button variant="outline-info" className="addBtn" onClick={handleShow}>Add New Question</Button>
                 </Card.Footer>
             </Card>
         </div>
         <Modal 
+        size="lg"
         show={show} 
         onHide={handleClose} 
         style={{opacity:1}} 
         centered
         dialogClassName="qModal"
         >
-        <QuestionModal 
+        <NewUpdateModal
             questionNum = {props.questionNum}
             question = {props.question}
             tip = {props.tip}
@@ -48,10 +40,8 @@ function InterviewCard(props) {
             timer = {props.timer}
             handleClose={handleClose}/>
         </Modal>
-        
-    </>
+    </> 
     );
-}
+};
 
-
-export default InterviewCard;
+export default NewQuestion;

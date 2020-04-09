@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import questionService from '../../utils/questionService';
 import './QuestionPage.css';
 import InterviewCard from '../../components/InterviewCard/InterviewCard';
+import NewQuestion from '../../components/NewQuestion/NewQuestion';
 
 
 class QuestionPage extends Component {
@@ -19,15 +20,16 @@ class QuestionPage extends Component {
             <div className = 'InterviewBoard'>
             <h1>Your questions</h1>
             <div className = 'InterviewBoard-grid'>
-                {this.state.questions.map((query, index) =>
+                {this.state.questions.map((queryCard, index) =>
                     <InterviewCard 
-                    question = {query.question}
-                    tip = {query.tip}
-                    script = {query.script}
-                    timer = {query.timer}
+                    question = {queryCard.question}
+                    tip = {queryCard.tip}
+                    script = {queryCard.script}
+                    timer = {queryCard.timer}
                     questionNum = {index + 1}
                     />
                 )}
+                <NewQuestion/>
             </div>
         </div>
         )}

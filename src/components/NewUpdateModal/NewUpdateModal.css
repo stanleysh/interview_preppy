@@ -1,0 +1,23 @@
+.formModal {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 15px;
+    justify-items: center;
+    justify-self: center;
+    max-width: 100%;
+}
+
+.form-group {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+textarea {
+    width: auto;
+    height: auto;
+    font-size: 12px;
+}
+
+.customArea {
+    font-size: 16px;
+}

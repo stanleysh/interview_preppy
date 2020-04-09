@@ -32,7 +32,7 @@ function QuestionModal(props) {
             <Modal.Header closeButton>
                 <Modal.Title><h1>Question: {props.questionNum}</h1></Modal.Title>
             </Modal.Header>
-            <Modal.Body >
+            <Modal.Body>
                 <p id='question'>
                     {props.question}
                 </p>
@@ -64,7 +64,7 @@ function QuestionModal(props) {
             <Modal.Footer>
             <Button variant="info" onClick={props.handleClose} style={{fontSize: '20px'}}>
                 Finished!
-             </Button>
+            </Button>
             </Modal.Footer>
         </div>
     );

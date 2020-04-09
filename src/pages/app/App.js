@@ -9,7 +9,7 @@ import userService from '../../utils/userService';
 import NavBar from '../../components/NavBar/NavBar';
 import AboutPage from '../AboutPage/AboutPage';
 import QuestionPage from '../QuestionPage/QuestionPage';
-import DemoInterviewBoard from '../../components/DemoInterviewBoard/DemoInterviewBoard';
+import DemoInterviewBoard from '../DemoPage/DemoPage';
 
 class App extends Component {
   constructor() {

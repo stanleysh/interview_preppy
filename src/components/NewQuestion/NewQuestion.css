@@ -1,0 +1,20 @@
+.InterviewCard {
+    justify-self: center;
+}
+
+.addBtn {
+    font-size: 15px;
+}
+
+.qModal {
+    min-width: 40%;
+}
+
+.newQuestionLogo {
+    max-height: 40%;
+    opacity: 70%;
+}
+
+.newQuestion {
+    margin: 15px 0px;
+}
