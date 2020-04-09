@@ -15,15 +15,15 @@ module.exports = {
 
 async function signup(req, res) {
   const user = new User(req.body);
+  const token = createJWT(user);
   defaultQuestions.forEach(question => {
     var newQuestion = new InterviewQuestion(question)
+    newQuestion.user = user._id;
     newQuestion.save();
     user.questions.push(newQuestion);
   })
   try {
     await user.save();
-    const id = user._id;
-    const token = createJWT(user);
     res.json({ token });
   } catch (err) {
     res.status(400).json(err);

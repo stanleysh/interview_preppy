@@ -4,7 +4,8 @@ const questionsCtrl = require('../../controllers/questions');
 
 router.use(require('../../config/auth'));
 // router.get('/user._id', checkAuth, questionsCtrl);
-router.get('/', questionsCtrl.show);
+router.get('/all', questionsCtrl.showAll);
+router.get('/', checkAuth, questionsCtrl.questions)
 
 function checkAuth(req, res, next) {
   if (req.user) return next();

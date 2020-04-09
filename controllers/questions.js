@@ -5,7 +5,8 @@ module.exports = {
     createQuestion,
     updateQuestion,
     deleteQuestion,
-    show
+    showAll,
+    questions
 }
 
 function createQuestion(req, res) {
@@ -23,10 +24,19 @@ function createQuestion(req, res) {
     });
 };
 
-async function show(req, res) {
+async function showAll(req, res) {
     const questions = await InterviewQuestion.find({})
     res.json(questions)
 }
+
+async function questions(req, res) {
+    try {
+        const questions = await InterviewQuestion.find({'user': req.user._id});
+        res.json(questions);
+    } catch (err) {
+        res.json(err);
+    };
+};
 
 function readQuestions(req, res) {
     User.findById(req.user._id, function(err, user) {
