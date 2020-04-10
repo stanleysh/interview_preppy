@@ -25,15 +25,9 @@ class QuestionForm extends Component {
         e.preventDefault();
         try {
             await questionService.newQuestion(this.state, '/api/questions/new');
-            this.setState({
-                question: '',
-                tips: '',
-                script: '',
-                timer: null,
-            })
-            this.props.handleClose();
+            this.props.history.push('/questions');
         } catch (err) {
-            // this.setState({updateMessage: err.message});
+            console.log(err.message);
         };
     };
 

@@ -7,7 +7,6 @@ const userSchema = new mongoose.Schema({
   name: {type: String},
   email: {type: String, required: true, lowercase: true, unique: true},
   password: {type: String},
-  questions: [{type: mongoose.Schema.Types.ObjectId, ref:'InterviewQuestion'}]
 }, {
   timestamps: true
 });

@@ -13,8 +13,6 @@ function createQuestion(req, res) {
     const question = new InterviewQuestion(req.body);
     question.save();
     User.findById(req.user._id, function(err, user) {
-        user.questions.push(question);
-        console.log(user.questions)
         user.save(function(err) {
             if (err) {
                 console.log(err);

@@ -20,7 +20,6 @@ async function signup(req, res) {
     var newQuestion = new InterviewQuestion(question)
     newQuestion.user = user._id;
     newQuestion.save();
-    user.questions.push(newQuestion);
   })
   try {
     await user.save();
