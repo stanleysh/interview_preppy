@@ -9,6 +9,7 @@ class QuestionForm extends Component {
         tips: '',
         script: '',
         timer: null,
+        user: this.props.user._id,
         completed: false
     }
 
