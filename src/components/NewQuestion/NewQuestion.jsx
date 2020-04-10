@@ -1,16 +1,10 @@
-import React, {useState} from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import './NewQuestion.css';
 import Card from 'react-bootstrap/Card';
-import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import NewUpdateModal from '../../components/NewUpdateModal/NewUpdateModal';
 
 function NewQuestion(props) {
-    const [show, setShow] = useState(false);
-    
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-
     return (
         <>
         <div className='InterviewCard'>
@@ -20,26 +14,12 @@ function NewQuestion(props) {
                     <img src='https://picaflor-azul.com/images/plus-circle1.png' className="newQuestionLogo" alt="Add question logo"/>
                 </Card.Body>
                 <Card.Footer>
-                    <Button variant="outline-info" className="addBtn" onClick={handleShow}>Add New Question</Button>
+                    <Link to='/questions/new'>
+                        <Button variant="outline-info" className="addBtn">Add New Question</Button>
+                    </Link>
                 </Card.Footer>
             </Card>
         </div>
-        <Modal 
-        size="lg"
-        show={show} 
-        onHide={handleClose} 
-        style={{opacity:1}} 
-        centered
-        dialogClassName="qModal"
-        >
-        <NewUpdateModal
-            questionNum = {props.questionNum}
-            question = {props.question}
-            tip = {props.tip}
-            script = {props.script}
-            timer = {props.timer}
-            handleClose={handleClose}/>
-        </Modal>
     </> 
     );
 };

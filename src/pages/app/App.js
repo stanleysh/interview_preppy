@@ -10,6 +10,7 @@ import NavBar from '../../components/NavBar/NavBar';
 import AboutPage from '../AboutPage/AboutPage';
 import QuestionPage from '../QuestionPage/QuestionPage';
 import DemoInterviewBoard from '../DemoPage/DemoPage';
+import NewUpdatePage from '../NewUpdatePage/NewUpdatePage';
 
 class App extends Component {
   constructor() {
@@ -54,6 +55,11 @@ class App extends Component {
         }/>
         <Route exact path = '/questions' render={() =>
           <QuestionPage
+          user = {this.state.user}
+          />
+        }/>
+        <Route exact path = '/questions/new' render={() =>
+          <NewUpdatePage
           user = {this.state.user}
           />
         }/>

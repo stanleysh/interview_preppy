@@ -1,4 +1,4 @@
-.formModal {
+.formLayout {
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 15px;
@@ -20,4 +20,8 @@ textarea {
 
 .customArea {
     font-size: 16px;
+}
+
+.formLayout h2 {
+    text-align: left;
 }

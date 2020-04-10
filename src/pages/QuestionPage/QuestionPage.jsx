@@ -14,7 +14,7 @@ class QuestionPage extends Component {
         const questions = await questionService.getUserQuestions('/api/questions');
         this.setState({questions})
     }
-    
+
     render () {
         return (
             <div className = 'InterviewBoard'>
