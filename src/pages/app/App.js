@@ -58,7 +58,7 @@ class App extends Component {
           user = {this.state.user}
           />
         }/>
-        <Route exact path = '/questions/new' render={({history}) =>
+        <Route exact path = '/questions/form' render={({history}) =>
           <NewUpdatePage
           history={history}
           user = {this.state.user}

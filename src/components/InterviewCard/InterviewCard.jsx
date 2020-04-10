@@ -7,17 +7,19 @@ import QuestionModal from '../QuestionModal/QuestionModal'
 
 function InterviewCard(props) {
     const [show, setShow] = useState(false);
-    // const [edit, setEdit] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    // const handleEdit = () => setEdit(!edit);
+
+    // const handleEdit = () => {
+
+    // };
 
     let questionPreview;
-    if (props.question.length > 30) {
-        questionPreview = <h3>{props.question.slice(0,30)}...</h3>
+    if (props.interviewQuestion.question.length > 30) {
+        questionPreview = <h3>{props.interviewQuestion.question.slice(0,30)}...</h3>
     } else {
-        questionPreview = <h3>{props.question}</h3>
+        questionPreview = <h3>{props.interviewQuestion.question}</h3>
     }
 
     return (
@@ -27,6 +29,7 @@ function InterviewCard(props) {
                 <Card.Body>
                     <h1 className='questionTitle'>Question: {props.questionNum}</h1>
                     {questionPreview}
+                    
                 </Card.Body>
                 <Card.Footer>
                     <Button variant="outline-info" className="practice" onClick={handleShow}>Practice Now</Button>
@@ -39,13 +42,15 @@ function InterviewCard(props) {
         style={{opacity:1}} 
         centered
         dialogClassName="qModal"
+        size="lg"
         >
         <QuestionModal 
+            id = {props.interviewQuestion._id}
             questionNum = {props.questionNum}
-            question = {props.question}
-            tip = {props.tip}
-            script = {props.script}
-            timer = {props.timer}
+            question = {props.interviewQuestion.question}
+            tip = {props.interviewQuestion.tip}
+            script = {props.interviewQuestion.script}
+            timer = {props.interviewQuestion.timer}
             handleClose={handleClose}/>
         </Modal>
         

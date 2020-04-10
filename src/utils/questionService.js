@@ -9,7 +9,19 @@ function getUserQuestions (apiPath) {
         }
     };
     return fetch(apiPath, options).then(res => res.json());
-}
+};
+
+function getOneQuestion (questionId, apiPath) {
+    const options = {
+        method: 'GET',
+        headers: {
+            'Content-type': 'application/json',
+            'Authorization': 'Bearer ' + tokenService.getToken()
+        },
+        body: JSON.stringify(questionId)
+    };
+    return fetch(apiPath, options).then(res=>res.json());
+};
 
 function newQuestion (question, apiPath) {
     const options = {
@@ -48,6 +60,7 @@ function deleteQuestion (apiPath) {
 
 export default {
     getUserQuestions,
+    getOneQuestion,
     newQuestion,
     updateQuestion,
     deleteQuestion

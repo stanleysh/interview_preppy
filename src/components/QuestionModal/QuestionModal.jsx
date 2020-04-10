@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 import './QuestionModal.css';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
@@ -30,7 +31,10 @@ function QuestionModal(props) {
     return(
         <div className='practiceModal'>
             <Modal.Header closeButton>
-                <Modal.Title><h1>Question: {props.questionNum}</h1></Modal.Title>
+                <Modal.Title>
+                    <h1>Question: {props.questionNum}</h1>
+
+                </Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <p id='question'>
@@ -62,9 +66,26 @@ function QuestionModal(props) {
                 </Collapse>
             </Modal.Body>
             <Modal.Footer>
-            <Button variant="info" onClick={props.handleClose} style={{fontSize: '20px'}}>
-                Finished!
-            </Button>
+                <div className = 'ftr-btns'>
+                    <Link 
+                    to={{
+                        pathname: '/questions/form',
+                    state: {
+                        id: props.id,
+                        question: props.question,
+                        tips: props.tips,
+                        script: props.script,
+                        timer: props.timer,
+                        user: props.user
+                    }
+                }} >
+                        <Button className='ftr-btn' variant='info' onClick={props.handleClose} style={{fontSize: '20px'}}>Edit</Button>
+                    </Link>
+                    <Button variant="info" onClick={props.handleClose} style={{fontSize: '20px'}}>
+                    Finished!
+                    </Button>
+                </div>
+
             </Modal.Footer>
         </div>
     );

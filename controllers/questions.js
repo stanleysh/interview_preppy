@@ -6,6 +6,7 @@ module.exports = {
     updateQuestion,
     deleteQuestion,
     showAll,
+    getOneQuestion,
     showUserQuestions
 }
 
@@ -38,6 +39,15 @@ async function showUserQuestions(req, res) {
     };
 };
 
+async function getOneQuestion(req, res) {
+    try {
+        const question = await InterviewQuestion.findById({'_id': req.body._id});
+        res.json(question);
+    } catch (err) {
+        res.json(err)
+    }
+}
+
 function updateQuestion(req, res) {
     InterviewQuestion.findById(req.q_id, function(err, question) {
         question(req.body);
@@ -52,7 +62,7 @@ function updateQuestion(req, res) {
 };
 
 function deleteQuestion(req, res) {
-    InterviewQuestion.findByIdAndDelete(req.q_id, function(err){
+    InterviewQuestion.findByIdAndDelete({_id:req.params.q_id}, function(err){
         if (err) {
             console.log(err)
             return res.json({err});

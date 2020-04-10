@@ -14,7 +14,7 @@ function NewQuestion(props) {
                     <img src='https://picaflor-azul.com/images/plus-circle1.png' className="newQuestionLogo" alt="Add question logo"/>
                 </Card.Body>
                 <Card.Footer>
-                    <Link to='/questions/new'>
+                    <Link to='/questions/form'>
                         <Button variant="outline-info" className="addBtn">Add New Question</Button>
                     </Link>
                 </Card.Footer>

@@ -20,12 +20,9 @@ class QuestionPage extends Component {
             <div className = 'InterviewBoard'>
             <h1>Your questions</h1>
             <div className = 'InterviewBoard-grid'>
-                {this.state.questions.map((queryCard, index) =>
+                {this.state.questions.map((interviewQuestion, index) =>
                     <InterviewCard 
-                    question = {queryCard.question}
-                    tip = {queryCard.tip}
-                    script = {queryCard.script}
-                    timer = {queryCard.timer}
+                    interviewQuestion = {interviewQuestion}
                     questionNum = {index + 1}
                     />
                 )}
