@@ -17,17 +17,21 @@ class QuestionForm extends Component {
     }
 }
 
-    // async componentDidMount() {
-    //     this.setState({
-    //         id: this.props.location.state.id,
-    //         question: this.props.location.state.question,
-    //         tips: this.props.location.statetips,
-    //         script: this.props.location.statescript,
-    //         timer: this.props.location.statetimer,
-    //         user: this.props.location.stateuser
-    //     });
-    //     console.log(this.state.id)
-    // }
+    async componentDidMount() {
+        try {
+            this.setState({id: this.props.match.params.id});
+            const existQuestion = await questionService.getOneQuestion(`/api/questions/${this.props.match.params.id}`);
+            this.setState({
+                question: existQuestion.question,
+                tips: existQuestion.tips,
+                script: existQuestion.script,
+                timer: existQuestion.timer,
+                completed: existQuestion.completed
+            });
+        } catch(err) {
+            console.log('No question or couldn\'t find question');
+        };
+    };
 
 
     handleChange = (e) => {
@@ -60,7 +64,16 @@ class QuestionForm extends Component {
         return !(this.state.question);
     }
 
+
+
     render() {
+        let title;
+        if (!this.state.id) {
+            title = <h1>Enter a new Question:</h1>
+        } else {
+            title = <h1>Edit question</h1>
+        }
+        
             return(
                 <div>
                     <div className="form-group">
@@ -68,9 +81,9 @@ class QuestionForm extends Component {
                         <h1>{this.props.location}</h1>
                         <form className="questionForm" onSubmit={this.handleNewSubmit}>
                         <div className="formLayout">
-                                <h1>Enter a new question: </h1>
-                                <div className="col-sm-12">
-                                    <input type="text" className="form-control Large-field" placeholder="Question" value={this.state.question} name="question" onChange={this.handleChange} />
+                                {title}
+                                <div className="col-sm-12 question">
+                                    <input type="text" className="form-control customLarge" placeholder="Question" value={this.state.question} name="question" onChange={this.handleChange} />
                                 </div>
                                 <div className="col-sm-12">
                                     <textarea className= "form-control customArea" placeholder="Tips" value={this.state.tips} name="tips" onChange={this.handleChange} rows='5' cols='100'/>
@@ -84,7 +97,7 @@ class QuestionForm extends Component {
                                     <h2>Please enter time in seconds</h2>
                                 </div>
                                 <div className="col-sm-12 text-center">
-                                    <button className="btn btn-default Large-btn btn-info" disabled={this.isFormInvalid()}>Create</button>&nbsp;&nbsp;
+                                    <button className="btn btn-default Large-btn btn-info" disabled={this.isFormInvalid()}>Submit</button>&nbsp;&nbsp;
                                     <Link to='/questions'>
                                         <button className="btn btn-default Large-btn btn-info">Cancel</button>
                                     </Link>

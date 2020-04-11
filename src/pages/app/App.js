@@ -64,12 +64,18 @@ class App extends Component {
           user = {this.state.user}
           />
         }/>
+        <Route exact path ='/questions/form/:id' render={({history, match}) =>
+          <NewUpdatePage
+          user = {this.state.user}
+          match = {match}
+          history = {history}
+          />
+        }/>
         <Route exact path = '/signup' render={({history}) =>
           <SignupPage
           history={history}
           handleSignupOrLogin={this.handleSignupOrLogin}
         />
-        
         }/>
         <Route exact path = '/login' render={({history}) =>
           <LoginPage

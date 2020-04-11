@@ -5,7 +5,7 @@ const questionsCtrl = require('../../controllers/questions');
 router.use(require('../../config/auth'));
 router.get('/all', questionsCtrl.showAll);
 router.get('/', checkAuth, questionsCtrl.showUserQuestions)
-router.get('/single', checkAuth, questionsCtrl.getOneQuestion)
+router.get('/:q_id', checkAuth, questionsCtrl.getOneQuestion)
 router.post('/new', checkAuth, questionsCtrl.createQuestion)
 router.put('/:q_id', checkAuth, questionsCtrl.updateQuestion)
 router.delete('/:q_id', checkAuth, questionsCtrl.deleteQuestion)

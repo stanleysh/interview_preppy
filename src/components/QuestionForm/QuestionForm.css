@@ -25,3 +25,8 @@ textarea {
 .formLayout h2 {
     text-align: left;
 }
+
+.customLarge {
+    height: 50px;
+    font-size: 20px;
+}

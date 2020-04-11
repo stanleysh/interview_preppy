@@ -41,7 +41,7 @@ async function showUserQuestions(req, res) {
 
 async function getOneQuestion(req, res) {
     try {
-        const question = await InterviewQuestion.findById({'_id': req.body._id});
+        const question = await InterviewQuestion.findById(req.params.q_id);
         res.json(question);
     } catch (err) {
         res.json(err)

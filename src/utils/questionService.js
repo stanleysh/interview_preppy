@@ -11,14 +11,13 @@ function getUserQuestions (apiPath) {
     return fetch(apiPath, options).then(res => res.json());
 };
 
-function getOneQuestion (questionId, apiPath) {
+function getOneQuestion (apiPath) {
     const options = {
         method: 'GET',
         headers: {
             'Content-type': 'application/json',
             'Authorization': 'Bearer ' + tokenService.getToken()
         },
-        body: JSON.stringify(questionId)
     };
     return fetch(apiPath, options).then(res=>res.json());
 };

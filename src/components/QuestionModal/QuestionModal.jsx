@@ -67,18 +67,7 @@ function QuestionModal(props) {
             </Modal.Body>
             <Modal.Footer>
                 <div className = 'ftr-btns'>
-                    <Link 
-                    to={{
-                        pathname: '/questions/form',
-                    state: {
-                        id: props.id,
-                        question: props.question,
-                        tips: props.tips,
-                        script: props.script,
-                        timer: props.timer,
-                        user: props.user
-                    }
-                }} >
+                    <Link to={`/questions/form/${props.id}`} >
                         <Button className='ftr-btn' variant='info' onClick={props.handleClose} style={{fontSize: '20px'}}>Edit</Button>
                     </Link>
                     <Button variant="info" onClick={props.handleClose} style={{fontSize: '20px'}}>

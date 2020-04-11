@@ -11,10 +11,6 @@ function InterviewCard(props) {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    // const handleEdit = () => {
-
-    // };
-
     let questionPreview;
     if (props.interviewQuestion.question.length > 30) {
         questionPreview = <h3>{props.interviewQuestion.question.slice(0,30)}...</h3>
