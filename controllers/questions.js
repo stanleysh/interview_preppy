@@ -49,15 +49,13 @@ async function getOneQuestion(req, res) {
 }
 
 function updateQuestion(req, res) {
-    InterviewQuestion.findById(req.q_id, function(err, question) {
-        question(req.body);
-        question.save(function(err) {
-            if (err) {
-                console.log(err)
-                return res.json({err});
-            };
-            res.json({msg: 'Question updated'});
-        });
+    InterviewQuestion.findByIdAndUpdate(req.params.q_id, {$set: req.body}, function(err, question){
+        if (err) {
+            console.log(err)
+            return res.json({err});
+        };
+        res.json({msg: 'Question updated'});
+
     });
 };
 
