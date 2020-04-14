@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import './QuestionModal.css';
 import Modal from 'react-bootstrap/Modal';
@@ -12,6 +12,26 @@ function QuestionModal(props) {
     const [openScript, showOpenScript] = useState(false);
     const [tip, setTip] = useState('Show Tip');
     const [script, setScript] = useState('Show Script');
+    const [questionTimer, setQuestionTimer] = useState(props.timer);
+    const [timing, setTiming] = useState(false);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setQuestionTimer(questionTimer - 1);
+          }, 1000);
+    })
+
+    let formatTime = (time) => {
+        let mins = Math.floor(time / 60).toString().padStart(2, '0');
+        let secs = (time % 60).toString().padStart(2, '0');
+        return `${mins}:${secs}`;
+    }
+
+    let restartTimer = () => {
+        setTiming(false)
+        return setQuestionTimer(props.timer)
+    }
+    
 
     let showHideTip = () => {
         if(openTip) {
@@ -40,6 +60,14 @@ function QuestionModal(props) {
                 <p id='question'>
                     {props.question}
                 </p>
+                <p>{formatTime(questionTimer)}</p>
+                <Button 
+                    onClick = {() => {showOpenTip(!openTip); showHideTip()}}
+                    aria-controls="tip"
+                    aria-expanded={openTip}
+                    className="tip-btn"
+                    variant="outline-info"
+                >Restart</Button>
                 <Button 
                     onClick = {() => {showOpenTip(!openTip); showHideTip()}}
                     aria-controls="tip"
