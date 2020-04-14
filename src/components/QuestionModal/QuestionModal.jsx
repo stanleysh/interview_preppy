@@ -16,20 +16,21 @@ function QuestionModal(props) {
     const [timing, setTiming] = useState(false);
 
     useEffect(() => {
+        if(timing) {
         setTimeout(() => {
             setQuestionTimer(questionTimer - 1);
           }, 1000);
-    })
+        };
+    });
 
     let formatTime = (time) => {
         let mins = Math.floor(time / 60).toString().padStart(2, '0');
         let secs = (time % 60).toString().padStart(2, '0');
         return `${mins}:${secs}`;
-    }
+    };
 
-    let restartTimer = () => {
-        setTiming(false)
-        return setQuestionTimer(props.timer)
+    let timerStartStop = () => {
+        setTiming(!timing)
     }
     
 
@@ -61,6 +62,10 @@ function QuestionModal(props) {
                     {props.question}
                 </p>
                 <p>{formatTime(questionTimer)}</p>
+                <button
+                onClick = {timerStartStop}>
+                    Start
+                </button>
                 <Button 
                     onClick = {() => {showOpenTip(!openTip); showHideTip()}}
                     aria-controls="tip"
