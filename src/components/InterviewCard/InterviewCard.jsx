@@ -44,6 +44,7 @@ function InterviewCard(props) {
             id = {props.interviewQuestion._id}
             questionNum = {props.questionNum}
             question = {props.interviewQuestion.question}
+            description = {props.interviewQuestion.description}
             tip = {props.interviewQuestion.tips}
             script = {props.interviewQuestion.script}
             timer = {props.interviewQuestion.timer}

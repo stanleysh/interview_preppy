@@ -8,6 +8,7 @@ class QuestionForm extends Component {
     super(props);
     this.state = {
         question: '',
+        description: '',
         tips: '',
         script: '',
         timer: null,
@@ -102,6 +103,9 @@ class QuestionForm extends Component {
                                 <input type="text" className="form-control customLarge" placeholder="Question" value={this.state.question} name="question" onChange={this.handleChange} />
                             </div>
                             <div className="col-sm-12">
+                                <textarea className= "form-control customArea" placeholder="Description" value={this.state.description} name="description" onChange={this.handleChange} rows='5' cols='100'/>
+                            </div>
+                            <div className="col-sm-12">
                                 <textarea className= "form-control customArea" placeholder="Tips" value={this.state.tips} name="tips" onChange={this.handleChange} rows='5' cols='100'/>
                             </div>
                             <div className="col-sm-12">
@@ -109,7 +113,6 @@ class QuestionForm extends Component {
                             </div>
                             <div className="col-sm-12">
                                 <input type="number" className="form-control Large-field" value={this.state.timer} name="timer" onChange={this.handleChange} />
-                                <br/>
                                 <h2>Please enter time in seconds</h2>
                             </div>
                             <div className="col-sm-12 text-center">

@@ -65,8 +65,11 @@ function QuestionModal(props) {
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <p id='question'>
+                <p className="question">
                     {props.question}
+                </p>
+                <p className="question-description">
+                    {props.description}
                 </p>
                 <Button 
                     onClick = {() => {showOpenTip(!openTip); showHideTip()}}
@@ -95,7 +98,7 @@ function QuestionModal(props) {
             </Modal.Body>
             <Modal.Footer className="custom-footer">
                 <div className='timer'> 
-                    <p className='timer-counter'>Timer: {formatTime(questionTimer)}</p>
+                    <p className='timer-counter'>&nbsp;Timer: {formatTime(questionTimer)}</p>
                     <button
                         onClick = {timerStartStop}
                         className={timing ? "timer-btn btn btn-danger" : "timer-btn btn btn-info"}>
