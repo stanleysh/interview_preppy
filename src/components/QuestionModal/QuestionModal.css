@@ -5,6 +5,10 @@
     row-gap: 15px;
 }
 
+.custom-footer {
+    justify-content: space-between;
+}
+
 .ftr-btns {
     margin: 5px;
 }
@@ -14,36 +18,56 @@
     padding: 4px 15px;
 }
 
+.timer {
+    width: 70%;
+    text-align: left;
+    font-size: 12px;
+}
+
+.timer-counter {
+    margin-bottom: 0;
+}
+
+.timer-btn{
+    margin-right: 3px;
+}
+
 .tip {
     font-size: 15px;
     margin: 5px 0;
-    grid-row-start: 3;
+    grid-row-start: 4;
     grid-column-start:1;
-    grid-column-end: 4;
+    grid-column-end: 5;
     text-align: center;
 }
 
 .tip-btn {
     font-size: 15px;
-    grid-row-start: 2;
+    grid-row-start: 3;
     grid-column-start: 2;
+    align-self: center;
+    justify-self: center;
 }
 
 .hidden-tip-script-btn {
     font-size: 15px;
-    grid-row-start: 3;
+    grid-row-start: 4;
     grid-column-start: 2;
+    align-self: center;
+    justify-self: center;
 }
 
 .show-tip-script-btn {
     font-size: 15px;
-    grid-row-start: 4;
+    grid-row-start: 5;
     grid-column-start: 2;
+    align-self: center;
+    justify-self: center;
 }
 
 .hidden-tip-script {
     font-size: 15px;
-    grid-row-start: 4;
+    grid-row-start: 5;
     grid-column-start:1;
     grid-column-end: 4;
     text-align: center;
@@ -52,7 +76,7 @@
 
 .show-tip-script {
     font-size: 15px;
-    grid-row-start: 5;
+    grid-row-start: 6;
     grid-column-start:1;
     grid-column-end: 4;
     text-align: center;
@@ -63,4 +87,5 @@
     grid-column-start: 1;
     grid-column-end: 4;
     text-align: center;
+    grid-row-start: 1;
 }

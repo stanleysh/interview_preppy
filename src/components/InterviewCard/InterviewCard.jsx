@@ -44,12 +44,13 @@ function InterviewCard(props) {
             id = {props.interviewQuestion._id}
             questionNum = {props.questionNum}
             question = {props.interviewQuestion.question}
-            tip = {props.interviewQuestion.tip}
+            tip = {props.interviewQuestion.tips}
             script = {props.interviewQuestion.script}
             timer = {props.interviewQuestion.timer}
-            handleClose={handleClose}/>
+            handleClose={handleClose}
+            demo = {props.demo}
+            />
         </Modal>
-        
     </>
     );
 }

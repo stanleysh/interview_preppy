@@ -17,9 +17,12 @@ function QuestionModal(props) {
 
     useEffect(() => {
         if(timing) {
-        setTimeout(() => {
+        let timer1= setTimeout(() => {
             setQuestionTimer(questionTimer - 1);
           }, 1000);
+          return () => {
+              clearTimeout(timer1);
+          }
         };
     });
 
@@ -30,9 +33,13 @@ function QuestionModal(props) {
     };
 
     let timerStartStop = () => {
-        setTiming(!timing)
+        setTiming(!timing);
     }
     
+    let restartTimer = () => {
+        setTiming(false);
+        setQuestionTimer(props.timer);
+    };
 
     let showHideTip = () => {
         if(openTip) {
@@ -50,7 +57,7 @@ function QuestionModal(props) {
     };
 
     return(
-        <div className='practiceModal'>
+        <>
             <Modal.Header closeButton>
                 <Modal.Title>
                     <h1>Question: {props.questionNum}</h1>
@@ -61,18 +68,6 @@ function QuestionModal(props) {
                 <p id='question'>
                     {props.question}
                 </p>
-                <p>{formatTime(questionTimer)}</p>
-                <button
-                onClick = {timerStartStop}>
-                    Start
-                </button>
-                <Button 
-                    onClick = {() => {showOpenTip(!openTip); showHideTip()}}
-                    aria-controls="tip"
-                    aria-expanded={openTip}
-                    className="tip-btn"
-                    variant="outline-info"
-                >Restart</Button>
                 <Button 
                     onClick = {() => {showOpenTip(!openTip); showHideTip()}}
                     aria-controls="tip"
@@ -98,7 +93,20 @@ function QuestionModal(props) {
                     </div>
                 </Collapse>
             </Modal.Body>
-            <Modal.Footer>
+            <Modal.Footer className="custom-footer">
+                <div className='timer'> 
+                    <p className='timer-counter'>Timer: {formatTime(questionTimer)}</p>
+                    <button
+                        onClick = {timerStartStop}
+                        className={timing ? "timer-btn btn btn-danger" : "timer-btn btn btn-info"}>
+                            {timing ? "Stop" : "Start"}
+                    </button>
+                        <button
+                        onClick = {restartTimer}
+                        className="timer-btn btn btn-warning" >
+                            Restart
+                    </button>
+                </div>
                 <div className = 'ftr-btns'>
                     <Link to={`/questions/form/${props.id}`} >
                         <Button className='ftr-btn' variant='info' onClick={props.handleClose} style={{fontSize: '20px'}}>Edit</Button>
@@ -107,9 +115,8 @@ function QuestionModal(props) {
                     Finished!
                     </Button>
                 </div>
-
             </Modal.Footer>
-        </div>
+        </>
     );
 }
 

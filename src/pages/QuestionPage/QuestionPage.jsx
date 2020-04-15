@@ -24,6 +24,7 @@ class QuestionPage extends Component {
                     <InterviewCard 
                     interviewQuestion = {interviewQuestion}
                     questionNum = {index + 1}
+                    demo = {false}
                     />
                 )}
                 <NewQuestion/>

@@ -11,6 +11,7 @@ const DemoInterviewBoard = (props) => (
                 <InterviewCard 
                 interviewQuestion = {interviewQuestion}
                 questionNum = {index + 1}
+                demo = {true}
                 />
             )}
         </div>
