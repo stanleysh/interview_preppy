@@ -5,8 +5,6 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Collapse from 'react-bootstrap/Collapse';
 
-
-
 function QuestionModal(props) {
     const [openTip, showOpenTip] = useState(false);
     const [openScript, showOpenScript] = useState(false);
@@ -20,11 +18,14 @@ function QuestionModal(props) {
         let timer1= setTimeout(() => {
             setQuestionTimer(questionTimer - 1);
           }, 1000);
+        if(questionTimer === 0) {
+            setTiming(false);
+        }
           return () => {
               clearTimeout(timer1);
           }
         };
-    });
+    }, [timing, questionTimer]);
 
     let formatTime = (time) => {
         let mins = Math.floor(time / 60).toString().padStart(2, '0');
@@ -40,6 +41,10 @@ function QuestionModal(props) {
         setTiming(false);
         setQuestionTimer(props.timer);
     };
+
+    let missingElement = (element) => {
+        return element === ''
+    }
 
     let showHideTip = () => {
         if(openTip) {
@@ -65,7 +70,7 @@ function QuestionModal(props) {
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <p className="question">
+                <p className="question-title">
                     {props.question}
                 </p>
                 <p className="question-description">
@@ -80,7 +85,7 @@ function QuestionModal(props) {
                 >{tip}</Button>
                 <Collapse in={openTip}>
                     <div className="tip">
-                        {props.tip}
+                        {missingElement(props.tip) ?  "Nothing here!" : props.tip}
                     </div>
                 </Collapse>
                 <Button
@@ -92,7 +97,7 @@ function QuestionModal(props) {
                 >{script}</Button>
                 <Collapse in={openScript}>
                     <div className={openTip ? 'show-tip-script' : 'hidden-tip-script'}>
-                        {props.script}
+                        {missingElement(props.script) ?  "Nothing here!" : props.script}
                     </div>
                 </Collapse>
             </Modal.Body>
@@ -107,7 +112,7 @@ function QuestionModal(props) {
                         <button
                         onClick = {restartTimer}
                         className="timer-btn btn btn-warning" >
-                            Restart
+                            Reset
                     </button>
                 </div>
                 <div className = 'ftr-btns'>

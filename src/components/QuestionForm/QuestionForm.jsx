@@ -24,6 +24,7 @@ class QuestionForm extends Component {
             const existQuestion = await questionService.getOneQuestion(`/api/questions/${this.props.match.params.id}`);
             this.setState({
                 question: existQuestion.question,
+                description: existQuestion.description,
                 tips: existQuestion.tips,
                 script: existQuestion.script,
                 timer: existQuestion.timer,
