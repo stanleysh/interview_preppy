@@ -106,12 +106,18 @@ function QuestionModal(props) {
                     <p className='timer-counter'>&nbsp;Timer: {formatTime(questionTimer)}</p>
                     <button
                         onClick = {timerStartStop}
-                        className={timing ? "timer-btn btn btn-danger" : "timer-btn btn btn-info"}>
+                        className={timing ? "timer-btn btn btn-danger" : "timer-btn btn btn-info"}
+                        disabled={props.demo}
+                        title={timing ? "Stop Timer" : "Start Timer"}
+                        >
                             {timing ? "Stop" : "Start"}
                     </button>
                         <button
                         onClick = {restartTimer}
-                        className="timer-btn btn btn-warning" >
+                        className="timer-btn btn btn-warning" 
+                        disabled={props.demo}
+                        title="Reset Timer"
+                        >
                             Reset
                     </button>
                 </div>

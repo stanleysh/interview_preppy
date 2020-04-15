@@ -11,7 +11,10 @@ class QuestionForm extends Component {
         description: '',
         tips: '',
         script: '',
-        timer: null,
+        timer: 0,
+        tempTimer: 0,
+        minutes: null,
+        seconds: null,
         user: this.props.user._id,
         completed: false,
         id: ''
@@ -22,25 +25,58 @@ class QuestionForm extends Component {
         try {
             this.setState({id: this.props.match.params.id});
             const existQuestion = await questionService.getOneQuestion(`/api/questions/${this.props.match.params.id}`);
+            let mins = this.timeToMin(existQuestion.timer);
+            let secs = this.timeToSec(existQuestion.timer);
             this.setState({
                 question: existQuestion.question,
                 description: existQuestion.description,
                 tips: existQuestion.tips,
                 script: existQuestion.script,
                 timer: existQuestion.timer,
-                completed: existQuestion.completed
+                minutes: mins,
+                seconds: secs
             });
         } catch(err) {
             console.log('No question or couldn\'t find question');
         };
     };
 
+    timeToMin = (timeInput) => {
+        let convertedTime = Math.floor(timeInput/60);
+        return convertedTime;
+    }
+
+    timeToSec = (timeInput) => {
+        let convertedTime = timeInput % 60;
+        return convertedTime;
+    }
+
+    minToTime = (mins) => {
+        return mins * 60;
+    }
 
     handleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
         });
+        console.log(e.target.value)
     };
+
+    handleMinsChange = (e) => {
+        this.setState({
+            minutes: e.target.value,
+            tempTimer: this.minToTime(e.target.value)
+        })
+        console.log(this.state.minutes)
+    }
+
+    handleSecondsChange = (e) => {
+        this.setState({
+            seconds: e.target.value,
+            tempTimer: this.state.tempTimer + e.target.value
+        })
+        console.log(this.state.seconds)
+    }
 
     handleNewSubmit = async (e) => {
         e.preventDefault();
@@ -55,6 +91,9 @@ class QuestionForm extends Component {
     handleEditSubmit = async (e) => {
         e.preventDefault();
         try {
+            this.setState({
+                timer: this.state.tempTimer
+            })
             await questionService.updateQuestion(this.state, `/api/questions/${this.state.id}`)
             this.props.history.push('/questions');
         } catch (err) {
@@ -95,26 +134,32 @@ class QuestionForm extends Component {
         return(
             <div className="question-form">
                 <div className="form-group">
-                    {console.log(this.props)}
                     <h1>{this.props.location}</h1>
                     <form className="questionForm" onSubmit={this.state.id ?  this.handleEditSubmit : this.handleNewSubmit}>
                     <div className="formLayout">
                             {title}
                             <div className="col-sm-12 question">
+                                <h2>Question: </h2>
                                 <input type="text" className="form-control customLarge" placeholder="Question" value={this.state.question} name="question" onChange={this.handleChange} />
                             </div>
                             <div className="col-sm-12">
+                                <h2>Description: </h2>
                                 <textarea className= "form-control customArea" placeholder="Description" value={this.state.description} name="description" onChange={this.handleChange} rows='5' cols='100'/>
                             </div>
                             <div className="col-sm-12">
+                                <h2>Tips: </h2>
                                 <textarea className= "form-control customArea" placeholder="Tips" value={this.state.tips} name="tips" onChange={this.handleChange} rows='5' cols='100'/>
                             </div>
                             <div className="col-sm-12">
+                                <h2>Script: </h2>
                                 <textarea className= "form-control customArea" placeholder="Script" value={this.state.script} name="script" onChange={this.handleChange} rows='5' cols='100'/>
                             </div>
                             <div className="col-sm-12">
-                                <input type="number" className="form-control Large-field" value={this.state.timer} name="timer" onChange={this.handleChange} />
-                                <h2>Please enter time in seconds</h2>
+                                <h2>Timer [Minutues : Seconds]: </h2>
+                                <div className="time-input">
+                                    <input type="number" className="time-field" placeholder="min" value={this.state.minutes} name="minutes" onChange={this.handleMinsChange} />&nbsp;:&nbsp;
+                                    <input type="number" className="time-field" placeholder="sec" value={this.state.seconds} name="seconds" onChange={this.handleSecondsChange} />
+                                </div>
                             </div>
                             <div className="col-sm-12 text-center">
                                 <button className="btn btn-default Large-btn btn-info" disabled={this.isFormInvalid()}>Submit</button>&nbsp;&nbsp;&nbsp;

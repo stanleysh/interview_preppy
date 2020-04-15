@@ -21,7 +21,6 @@ class App extends Component {
   }
 
   handleLogout = () => {
-    // window.location.reload()
     userService.logout();
     this.setState({ user: null });
   }
