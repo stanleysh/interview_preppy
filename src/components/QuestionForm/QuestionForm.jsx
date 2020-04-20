@@ -12,9 +12,8 @@ class QuestionForm extends Component {
         tips: '',
         script: '',
         timer: 0,
-        tempTimer: 0,
-        minutes: null,
-        seconds: null,
+        minutes: 0,
+        seconds: 0,
         user: this.props.user._id,
         completed: false,
         id: ''
@@ -41,6 +40,14 @@ class QuestionForm extends Component {
         };
     };
 
+    componentDidUpdate(prevProps, prevState) {
+        if(this.state.minutes !== prevState.minutes || this.state.seconds !== prevState.seconds) {
+            this.setState({
+                timer: (Number(this.state.minutes) * 60) + Number(this.state.seconds)
+            })
+        }
+    }
+
     timeToMin = (timeInput) => {
         let convertedTime = Math.floor(timeInput/60);
         return convertedTime;
@@ -65,21 +72,22 @@ class QuestionForm extends Component {
     handleMinsChange = (e) => {
         this.setState({
             minutes: e.target.value,
-            tempTimer: this.minToTime(e.target.value)
-        })
-        console.log(this.state.minutes)
+        });
+        console.log(`Minutes: ${e.target.value}`);
     }
 
     handleSecondsChange = (e) => {
         this.setState({
             seconds: e.target.value,
-            tempTimer: this.state.tempTimer + e.target.value
         })
         console.log(this.state.seconds)
     }
 
     handleNewSubmit = async (e) => {
         e.preventDefault();
+        this.setState({
+            timer: (this.state.minutes * 60) + this.state.seconds,
+        })
         try {
             await questionService.newQuestion(this.state, '/api/questions/new');
             this.props.history.push('/questions');
@@ -91,11 +99,8 @@ class QuestionForm extends Component {
     handleEditSubmit = async (e) => {
         e.preventDefault();
         try {
-            this.setState({
-                timer: this.state.tempTimer
-            })
             await questionService.updateQuestion(this.state, `/api/questions/${this.state.id}`)
-            this.props.history.push('/questions');
+            this.props.history.push('/questions')
         } catch (err) {
             console.log(err.message);
         }
@@ -117,8 +122,6 @@ class QuestionForm extends Component {
     isFormInvalid() {
         return !(this.state.question);
     }
-
-
 
     render() {
         let title;
@@ -157,8 +160,8 @@ class QuestionForm extends Component {
                             <div className="col-sm-12">
                                 <h2>Timer [Minutues : Seconds]: </h2>
                                 <div className="time-input">
-                                    <input type="number" className="time-field" placeholder="min" value={this.state.minutes} name="minutes" onChange={this.handleMinsChange} />&nbsp;:&nbsp;
-                                    <input type="number" className="time-field" placeholder="sec" value={this.state.seconds} name="seconds" onChange={this.handleSecondsChange} />
+                                    <input type="number" className="time-field" placeholder="min" value={this.state.minutes} name="minutes" onChange={this.handleChange} />&nbsp;:&nbsp;
+                                    <input type="number" className="time-field" placeholder="sec" value={this.state.seconds} name="seconds" onChange={this.handleChange} />
                                 </div>
                             </div>
                             <div className="col-sm-12 text-center">
