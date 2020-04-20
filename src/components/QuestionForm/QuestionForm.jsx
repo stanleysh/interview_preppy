@@ -69,18 +69,24 @@ class QuestionForm extends Component {
         console.log(e.target.value)
     };
 
-    handleMinsChange = (e) => {
-        this.setState({
-            minutes: e.target.value,
-        });
-        console.log(`Minutes: ${e.target.value}`);
-    }
 
     handleSecondsChange = (e) => {
+        if (e.target.value > 59) {
+            var mins = Math.floor(e.target.value/60)
+            this.setState({
+                minutes: this.state.minutes + mins,
+                seconds: e.target.value % 60
+            });
+        } else if (e.target.value < 0) {
+            this.setState({
+                seconds: 0
+            })
+        } else {
         this.setState({
             seconds: e.target.value,
         })
         console.log(this.state.seconds)
+    }
     }
 
     handleNewSubmit = async (e) => {
@@ -161,7 +167,7 @@ class QuestionForm extends Component {
                                 <h2>Timer [Minutues : Seconds]: </h2>
                                 <div className="time-input">
                                     <input type="number" className="time-field" placeholder="min" value={this.state.minutes} name="minutes" onChange={this.handleChange} />&nbsp;:&nbsp;
-                                    <input type="number" className="time-field" placeholder="sec" value={this.state.seconds} name="seconds" onChange={this.handleChange} />
+                                    <input type="number" className="time-field" placeholder="sec" value={this.state.seconds} name="seconds" onChange={this.handleSecondsChange} />
                                 </div>
                             </div>
                             <div className="col-sm-12 text-center">
