@@ -11,9 +11,9 @@ class QuestionForm extends Component {
         description: '',
         tips: '',
         script: '',
-        timer: 0,
-        minutes: 0,
-        seconds: 0,
+        timer: null,
+        minutes: null,
+        seconds: null,
         user: this.props.user._id,
         completed: false,
         id: ''
@@ -49,11 +49,15 @@ class QuestionForm extends Component {
     }
 
     timeToMin = (timeInput) => {
+        if (timeInput === null)
+            return null
         let convertedTime = Math.floor(timeInput/60);
         return convertedTime;
     }
 
     timeToSec = (timeInput) => {
+        if (timeInput === null)
+            return null
         let convertedTime = timeInput % 60;
         return convertedTime;
     }
