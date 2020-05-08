@@ -68,4 +68,3 @@ function deleteQuestion(req, res) {
         res.json({msg: 'Question deleted'});
     });
 };
-

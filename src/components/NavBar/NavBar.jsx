@@ -8,10 +8,7 @@ function NavBar(props) {
         return (
         <div className="App-header">
             <div className='Logo'>
-                <Link to="/" className="logo-holder"><img src="https://cdn.auth0.com/blog/react-js/react.png" alt="logo" width="75px"/></Link>
-            </div>
-            <div className='banner'>
-                <p>Interview Prepper</p>
+            <Link to="/" className="logo-holder"><p><img src="https://cdn.auth0.com/blog/react-js/react.png" alt="logo" width="40px"/> Preppy</p></Link>
             </div>
             <div className='right-info name'>
                 <p>Welcome {props.user.name}</p>
@@ -26,10 +23,7 @@ function NavBar(props) {
     return (
     <div className="App-header">
         <div className='Logo'>
-            <Link to="/" className="logo-holder"><img src="https://cdn.auth0.com/blog/react-js/react.png" alt="logo" width="75px"/></Link>
-        </div>
-        <div className='banner'>
-            <p>Interview Prepper</p>
+            <Link to="/" className="logo-holder"><p><img src="https://cdn.auth0.com/blog/react-js/react.png" alt="logo" width="40px"/> Preppy</p></Link>
         </div>
         <div className='right-info'>
             <Link to='/signup'><Button variant="info" className="nav-buttons">Sign-up</Button></Link>

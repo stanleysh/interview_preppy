@@ -1,4 +1,12 @@
-
+.welcome-banner {
+    background-color: #b6f0fe;
+    font-size: 8rem;
+    color: #58757d;
+    padding: 40px 210px;
+    text-align: left;
+    line-height: 80px;
+    font-weight: bolder;
+}
 
 .welcome-bar {
     margin: auto;

@@ -1,21 +1,21 @@
 .App-header {
-  font-size: 50px;
+  font-size: 25px;
   background-color: #17a2b8;
-  padding: 20px;
-  margin-bottom: 20px;
+  padding-top: 10px;
   color: white;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
 }
   
 .Logo {
   justify-self: start;
-  margin-left: 0px;
+  margin: 5px 10px;
 }
 
 .nav-buttons {
   margin-right: 10px;
   font-size: 20px;
+  margin-top: 5px;
 }
 
 .name {
@@ -24,4 +24,14 @@
 
 .right-info {
   justify-self: end;
+}
+
+.logo-holder {
+  text-decoration: none;
+  color: white;
+}
+
+.logo-holder:hover {
+  text-decoration: none;
+  color: white;
 }
