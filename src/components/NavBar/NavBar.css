@@ -4,6 +4,7 @@
   color: white;
   display: grid;
   grid-template-columns: 83% 1fr 1fr;
+  column-gap: 5px;
 }
   
 .Logo {
@@ -53,6 +54,6 @@
   font-size: 13px;
 }
 
-.dropdown-toggle:after { 
-  content: none; 
+.dropdown-menu {
+  margin-right: 15px;
 }

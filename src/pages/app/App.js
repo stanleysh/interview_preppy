@@ -29,6 +29,12 @@ class App extends Component {
     this.setState({user: userService.getUser()});
   }
 
+  checkLoggedin = () => {
+    if(this.state.user) {
+      
+    }
+  }
+
   componentDidUpdate() {
     window.location.reload()
   }
