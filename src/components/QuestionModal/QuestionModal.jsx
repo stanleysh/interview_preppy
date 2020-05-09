@@ -85,7 +85,7 @@ function QuestionModal(props) {
                 >{tip}</Button>
                 <Collapse in={openTip}>
                     <div className="tip">
-                        {missingElement(props.tip) ?  "Nothing here!" : props.tip}
+                        {missingElement(props.tips) ?  "Nothing here!" : props.tips}
                     </div>
                 </Collapse>
                 <Button
