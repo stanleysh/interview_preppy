@@ -1,15 +1,14 @@
 .App-header {
   font-size: 25px;
   background-color: #17a2b8;
-  padding-top: 10px;
   color: white;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 83% 1fr 1fr;
 }
   
 .Logo {
   justify-self: start;
-  margin: 5px 10px;
+  margin: 10px 10px 3px 10px;
   align-self: center;
 }
 
@@ -22,17 +21,22 @@
 }
 
 .nav-buttons {
-  margin-right: 10px;
-  font-size: 20px;
-  margin-bottom: 10px;
+  font-size: 13px;
   float: left;
+  align-self: center;
+  padding-right: 7.5px;
+  padding-top: 6px;
 }
 
-.right-info {
+.about-info {
+  justify-self: end;
+  align-self: center;
+}
+
+.account-info {
   justify-self: end;
   margin-right: 20px;
-  font-size: 20px;
-  float: left;
+  align-self: center;
 }
 
 .logo-holder {
@@ -43,4 +47,12 @@
 .logo-holder:hover {
   text-decoration: none;
   color: white;
+}
+
+.dropdown-item {
+  font-size: 13px;
+}
+
+.dropdown-toggle:after { 
+  content: none; 
 }

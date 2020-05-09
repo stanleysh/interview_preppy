@@ -97,12 +97,28 @@
     justify-self: start;
 }
 
-.fade-in {
+.fade-in-1 {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 1s;
+}
+
+.fade-in-2 {
 	opacity: 1;
 	animation-name: fadeInOpacity;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
 	animation-duration: 2s;
+}
+
+.fade-in-3 {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 3s;
 }
 
 @keyframes fadeInOpacity {

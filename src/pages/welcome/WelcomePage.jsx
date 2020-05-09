@@ -22,16 +22,16 @@ const WelcomePage = (props) => {
 
     return (
         <>
-            <div className="welcome-banner">
+            <div className="welcome-banner fade-in-1">
                 <p>Nice to meet you! Im your personal interview assistant :{")"}</p>
             </div>
-            <div className="welcome-message">
+            <div className="welcome-message fade-in-2">
                 <p>I'm here to provide you with the most relevant interview questions for the industry of your choice, curated answer scripts and tools to help you prep with confidence!</p>
             </div> 
-            <div className="welcome-bar">
-                <Link to='/demo'><button className="welcome-btn fade-in">Demo</button></Link>
-                <Link to='/signup'><Button variant="outline-info welcome-btn fade-in">Sign-up</Button></Link>
-                <Link to='/login'><Button variant="outline-info welcome-btn fade-in">Login</Button></Link>
+            <div className="welcome-bar fade-in-3">
+                <Link to='/demo'><button className="welcome-btn">Demo</button></Link>
+                <Link to='/signup'><Button variant="outline-info welcome-btn">Sign-up</Button></Link>
+                <Link to='/login'><Button variant="outline-info welcome-btn">Login</Button></Link>
             </div>
         </>
     )
