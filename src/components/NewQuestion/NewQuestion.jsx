@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './NewQuestion.css';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import addPic from './images/plus-circle1.png'
 
 function NewQuestion(props) {
     return (
@@ -11,7 +12,7 @@ function NewQuestion(props) {
             <Card style={{ width: '300px', height: '200px'}}>
                 <Card.Body>
                     <h1 className='newQuestion'>New Question</h1>
-                    <img src='https://picaflor-azul.com/images/plus-circle1.png' className="newQuestionLogo" alt="Add question logo"/>
+                    <img src={addPic} className="newQuestionLogo" alt="Add question logo"/>
                 </Card.Body>
                 <Card.Footer>
                     <Link to='/questions/form'>

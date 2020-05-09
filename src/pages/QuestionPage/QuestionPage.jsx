@@ -18,18 +18,18 @@ class QuestionPage extends Component {
     render () {
         return (
             <div className = 'InterviewBoard'>
-            <h1>Your questions</h1>
-            <div className = 'InterviewBoard-grid'>
-                {this.state.questions.map((interviewQuestion, index) =>
-                    <InterviewCard 
-                    interviewQuestion = {interviewQuestion}
-                    questionNum = {index + 1}
-                    demo = {false}
-                    />
-                )}
-                <NewQuestion/>
+                <h1>Your questions</h1>
+                <div className = 'InterviewBoard-grid'>
+                    {this.state.questions.map((interviewQuestion, index) =>
+                        <InterviewCard 
+                        interviewQuestion = {interviewQuestion}
+                        questionNum = {index + 1}
+                        demo = {false}
+                        />
+                    )}
+                    <NewQuestion/>
+                </div>
             </div>
-        </div>
         )}
 }
 
