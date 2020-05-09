@@ -123,7 +123,7 @@ function QuestionModal(props) {
                 </div>
                 <div className = 'ftr-btns'>
                     <Link to={`/questions/form/${props.id}`} >
-                        <Button className='ftr-btn' variant='info' onClick={props.handleClose} style={{fontSize: '20px'}}>Edit</Button>
+                        <Button className='ftr-btn' variant='info' onClick={props.handleClose} style={{fontSize: '20px'}} disabled={props.demo}>Edit</Button>
                     </Link>
                     <Button variant="info" onClick={props.handleClose} style={{fontSize: '20px'}}>
                     Finished!

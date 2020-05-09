@@ -1,27 +1,59 @@
 .App-header {
-  font-size: 50px;
+  font-size: 25px;
   background-color: #17a2b8;
-  padding: 20px;
-  margin-bottom: 20px;
   color: white;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 83% 1fr 1fr;
+  column-gap: 5px;
 }
   
 .Logo {
   justify-self: start;
-  margin-left: 0px;
-}
-
-.nav-buttons {
-  margin-right: 10px;
-  font-size: 20px;
+  margin: 10px 10px 3px 10px;
+  align-self: center;
 }
 
 .name {
-  font-size: 20px;
+  float: left;
+  align-content: center;
+  margin-right: 10px;
+  align-self: center;
+  margin-top: 6px;
 }
 
-.right-info {
+.nav-buttons {
+  font-size: 13px;
+  float: left;
+  align-self: center;
+  padding-right: 7.5px;
+  padding-top: 6px;
+}
+
+.about-info {
   justify-self: end;
+  align-self: center;
+}
+
+.account-info {
+  justify-self: end;
+  margin-right: 20px;
+  align-self: center;
+}
+
+.logo-holder {
+  text-decoration: none;
+  color: white;
+}
+
+.logo-holder:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.dropdown-item {
+  font-size: 13px;
+}
+
+.dropdown-menu {
+  margin-right: 15px;
 }
