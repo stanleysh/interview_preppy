@@ -10,20 +10,29 @@
 .Logo {
   justify-self: start;
   margin: 5px 10px;
+  align-self: center;
+}
+
+.name {
+  float: left;
+  align-content: center;
+  margin-right: 10px;
+  align-self: center;
+  margin-top: 6px;
 }
 
 .nav-buttons {
   margin-right: 10px;
   font-size: 20px;
-  margin-top: 5px;
-}
-
-.name {
-  font-size: 20px;
+  margin-bottom: 10px;
+  float: left;
 }
 
 .right-info {
   justify-self: end;
+  margin-right: 20px;
+  font-size: 20px;
+  float: left;
 }
 
 .logo-holder {

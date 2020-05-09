@@ -9,13 +9,42 @@
 }
 
 .welcome-bar {
+    position: absolute;
+    left: 15%;
+    top: 160%;
     margin: auto;
-    margin-top: 30px;
     display: inline-grid;
-    grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
     text-align: center;
     grid-gap: 15px;
+}
+
+.welcome-message {
+    font-size: 20px;
+    max-width: 40%;
+    text-align: left;
+    padding: 0 15px;
+    background-color: #b6f0fe;
+    margin-top: 50px;
+    position: absolute;
+    left: 15%;
+    border-radius: 10px;
+    padding: 10px 15px;
+}
+
+.welcome-message:after {
+    content: '';
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 42px solid transparent;
+	border-bottom-color: #b6f0fe;
+	border-top: 0;
+	border-right: 0;
+	margin-left: 41px;
+	margin-top: -42px;
 }
 
 .welcome-bar-logged-in {
@@ -41,10 +70,23 @@
 }
 
 .welcome-btn {
-    font-size: 25px;
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+    font-size: 20px;
     justify-self: center;
+    color: white;
+    background-color: #17a2b8;
+    border-radius: 30px;
+    padding: 5px 15px;
+    border-color: #17a2b8;
 }
 
+.welcome-btn:hover {
+    background-color: #58757d;
+    border-color: #58757d;    
+}
 .welcome-btn-questions {
     font-size: 25px;
     justify-self: end;

@@ -2,6 +2,10 @@
     margin: 30px;
 }
 
+.InterviewBoard {
+    margin-top: 25px;
+}
+
 .InterviewBoard-grid {
     text-align: center;
     display: grid;
