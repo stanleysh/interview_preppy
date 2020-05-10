@@ -14,6 +14,9 @@ const DemoInterviewBoard = (props) => (
             <br/>
             - Adding/editing tips/script
         </h4>
+        {/* <ul className="list-group">
+            
+        </ul> */}
         <div className = 'InterviewBoard-grid'>
             {defaultQuestions.map((interviewQuestion, index) =>
                 <InterviewCard 
