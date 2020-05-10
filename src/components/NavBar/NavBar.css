@@ -1,10 +1,9 @@
 .App-header {
-  font-size: 25px;
+  font-size: 20px;
   background-color: #17a2b8;
   color: white;
   display: grid;
-  grid-template-columns: 83% 1fr 1fr;
-  column-gap: 5px;
+  grid-template-columns: 65% 1fr 1fr;
 }
   
 .Logo {
@@ -22,11 +21,9 @@
 }
 
 .nav-buttons {
-  font-size: 13px;
+  font-size: 12px;
   float: left;
   align-self: center;
-  padding-right: 7.5px;
-  padding-top: 6px;
 }
 
 .about-info {
@@ -51,9 +48,29 @@
 }
 
 .dropdown-item {
-  font-size: 13px;
+  font-size: 12px;
 }
 
-.dropdown-menu {
-  margin-right: 15px;
+@media only screen and (min-width: 600px) {
+  .App-header {
+    grid-template-columns: 70% 1fr 1fr;
+    font-size: 22px;
+  }
+
+  .nav-buttons {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .App-header {
+    grid-template-columns: 77% 1fr 1fr;
+    font-size: 25px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .App-header {
+    grid-template-columns: 80% 1fr 1fr
+  }
 }

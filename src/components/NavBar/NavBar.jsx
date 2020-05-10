@@ -17,7 +17,7 @@ function NavBar(props) {
             <button type="button" class="btn btn-info dropdown-toggle nav-buttons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Hi {props.user.name}
             </button>
-            <div className="dropdown-menu">
+            <div className="dropdown-menu dropdown-menu-right">
                 <a className="dropdown-item" href="/questions">Your Questions</a>
                 <div class="dropdown-divider"></div>
                 <Link to='/'><button className="dropdown-item" onClick={props.handleLogout}>Logout</button></Link>
@@ -39,7 +39,7 @@ function NavBar(props) {
             <button type="button" class="btn btn-info dropdown-toggle nav-buttons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 My Account
             </button>
-            <div className="dropdown-menu">
+            <div className="dropdown-menu dropdown-menu-right">
                 <a className="dropdown-item" href="/signup">Signup</a>
                 <div class="dropdown-divider"></div>
                 <a className="dropdown-item" href="/login">Login</a>
