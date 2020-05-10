@@ -10,7 +10,7 @@
     background-color: #b6f0fe;
     font-size: 4rem;
     color: #58757d;
-    padding: 40px 40px;
+    padding: 40px;
     line-height: 4rem;
     text-align: left;
     font-weight: bolder;
@@ -20,7 +20,7 @@
     font-size: 15px;
     max-width: 70%;
     text-align: left;
-    padding: 0 10px;
+    padding: 0 auto 0 20px;
     background-color: #b6f0fe;
     margin: 50px auto 25px auto;
     border-radius: 10px;
@@ -140,26 +140,45 @@
 
 @media only screen and (min-width: 768px) {
     .welcome-banner {
-        font-size: 8rem;
-        line-height: 8rem;
-        padding: 40px auto;
-        left: 15%;
-        top: 160%;
+        font-size: 6rem;
+        line-height: 6rem;
+        padding: 40px 50px;
+
     }
 
     .welcome-message {
         font-size: 20px;
+        padding: 10px 15px;
+        max-width: 50%;
+    }
+
+    .welcome-bar {
+        grid-gap: 15px;
+    }
+
+    .welcome-btn {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .welcome-banner {
+        font-size: 8rem;
+        line-height: 8rem;
+        padding: 40px 210px;
+    }
+
+    .welcome-message {
+        font-size: 25px;
         padding: 10px 15px;
         max-width: 40%;
         margin-right: 40%;
     }
 
     .welcome-bar {
-        grid-gap: 15px;
-        margin-right: 44%;
-    }
-
-    .welcome-btn {
-        font-size: 20px;
+        grid-gap: 10px;
+        position: absolute;
+        top: 105%;
+        left: 20%;
     }
 }
