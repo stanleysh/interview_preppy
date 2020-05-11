@@ -12,17 +12,27 @@
 }
 
 .InterviewBoard h4 {
-    font-size: 15px;
+    font-size: 10px;
 }
 
 .InterviewBoard h1 {
-    font-size: 20px;
+    font-size: 13px;
 }
 
 .list-group {
-    max-width: 80%;
+    max-width: 90%;
     margin: auto;
     margin-top: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+    .InterviewBoard h4 {
+        font-size: 15px;
+    }
+    
+    .InterviewBoard h1 {
+        font-size: 18px;
+    }
 }
 
 @media only screen and (min-width: 1024px) {

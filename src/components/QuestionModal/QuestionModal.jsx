@@ -65,12 +65,11 @@ function QuestionModal(props) {
         <>
             <Modal.Header closeButton>
                 <Modal.Title>
-                    <h1>Question: {props.questionNum}</h1>
-
+                    Question: {props.questionNum}
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <p className="question-title">
+                <p className="modal-question-title">
                     {props.question}
                 </p>
                 <p className="question-description">
@@ -101,7 +100,7 @@ function QuestionModal(props) {
                     </div>
                 </Collapse>
             </Modal.Body>
-            <Modal.Footer className="custom-footer">
+            <Modal.Footer>
                 <div className='timer'> 
                     <p className='timer-counter'>&nbsp;Timer: {formatTime(questionTimer)}</p>
                     <button
@@ -123,9 +122,9 @@ function QuestionModal(props) {
                 </div>
                 <div className = 'ftr-btns'>
                     <Link to={`/questions/form/${props.id}`} >
-                        <Button className='ftr-btn' variant='info' onClick={props.handleClose} style={{fontSize: '20px'}} disabled={props.demo}>Edit</Button>
+                        <Button className='ftr-btn' variant='info' onClick={props.handleClose} disabled={props.demo}>Edit</Button>
                     </Link>
-                    <Button variant="info" onClick={props.handleClose} style={{fontSize: '20px'}}>
+                    <Button className="ftr-btn" variant="info" onClick={props.handleClose}>
                     Finished!
                     </Button>
                 </div>

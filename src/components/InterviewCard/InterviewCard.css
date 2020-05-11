@@ -11,9 +11,15 @@
 }
 
 .qModal {
-    min-width: 40%;
+    width: 90%;
+    margin: auto;
 }
 
-.InterviewBoard .questionTitle {
-    margin: 30px;
+.question-title {
+    margin-top: 30px;
+}
+
+.InterviewCard p {
+    margin-top: 20px;
+    font-size: 18px;
 }
