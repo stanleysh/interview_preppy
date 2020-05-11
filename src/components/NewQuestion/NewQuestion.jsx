@@ -12,7 +12,7 @@ function NewQuestion(props) {
             <Card style={{ width: '300px', height: '200px'}}>
                 <Card.Body>
                     <h1 className='newQuestion'>New Question</h1>
-                    <img src={addPic} className="newQuestionLogo" alt="Add question logo"/>
+                    <img src={require("./images/plus-circle1.png")} className="newQuestionLogo" alt="Add question logo"/>
                 </Card.Body>
                 <Card.Footer>
                     <Link to='/questions/form'>
