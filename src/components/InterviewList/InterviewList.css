@@ -1,0 +1,17 @@
+.interview-list {
+    display: grid;
+    grid-template-columns: 20% 1fr 20%;
+}
+
+.interview-list p {
+    font-size: 15px;
+}
+
+
+.list-group-item+.list-group-item {
+    border-top-width: 1px;
+}
+
+.practice-btn {
+    font-size: 12px;
+}

@@ -4,13 +4,14 @@
 }
 
 .About h4 {
-    padding: 15px;
+    padding: 5px;
     max-width: 70%;
-    margin: 0 auto 30px auto;
+    margin: 0 auto 10px auto;
+    font-size: 12px;
 }
 
 .About h1 {
-    font-size: 24px;
+    font-size: 15px;
 }
 
 .Creators {
