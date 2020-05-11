@@ -3,6 +3,8 @@ import questionService from '../../utils/questionService';
 import './QuestionPage.css';
 import InterviewCard from '../../components/InterviewCard/InterviewCard';
 import NewQuestion from '../../components/NewQuestion/NewQuestion';
+import MediaQuery from 'react-responsive';
+import InterviewList from '../../components/InterviewList/InterviewList';
 
 
 class QuestionPage extends Component {
@@ -19,16 +21,30 @@ class QuestionPage extends Component {
         return (
             <div className = 'InterviewBoard'>
                 <h1>Your questions</h1>
-                <div className = 'InterviewBoard-grid'>
+                <MediaQuery maxDeviceWidth={767}>
+                    <ul className="list-group">
                     {this.state.questions.map((interviewQuestion, index) =>
-                        <InterviewCard 
-                        interviewQuestion = {interviewQuestion}
-                        questionNum = {index + 1}
-                        demo = {false}
-                        />
-                    )}
-                    <NewQuestion/>
-                </div>
+                            <InterviewList
+                            interviewQuestion = {interviewQuestion}
+                            questionNum = {index + 1}
+                            demo = {true}
+                            />
+                            
+                        )}
+                    </ul>
+                </MediaQuery>
+                <MediaQuery minDeviceWidth={768}>
+                    <div className = 'InterviewBoard-grid'>
+                        {this.state.questions.map((interviewQuestion, index) =>
+                            <InterviewCard 
+                            interviewQuestion = {interviewQuestion}
+                            questionNum = {index + 1}
+                            demo = {false}
+                            />
+                        )}
+                        <NewQuestion/>
+                    </div>
+                </MediaQuery>
             </div>
         )}
 }
