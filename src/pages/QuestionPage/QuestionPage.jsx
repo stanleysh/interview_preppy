@@ -6,7 +6,7 @@ import NewQuestion from '../../components/NewQuestion/NewQuestion';
 import MediaQuery from 'react-responsive';
 import InterviewList from '../../components/InterviewList/InterviewList';
 import { Link } from 'react-router-dom'
-import Button from 'react-bootstrap/button';
+import Button from 'react-bootstrap/Button';
 
 
 class QuestionPage extends Component {
