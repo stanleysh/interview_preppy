@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './NewQuestion.css';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import addPic from './images/plus-circle1.png'
 
 function NewQuestion(props) {
     return (

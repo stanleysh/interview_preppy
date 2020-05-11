@@ -18,3 +18,7 @@
 .newQuestion {
     margin: 15px 0px;
 }
+
+.InterviewCard img {
+    z-index: -1;
+}

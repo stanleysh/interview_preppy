@@ -1,0 +1,36 @@
+.interview-list {
+    display: grid;
+    grid-template-columns: 20% 1fr 25%;
+}
+
+.interview-list p {
+    font-size: 9px;
+    text-align: left;
+}
+
+
+.list-group-item+.list-group-item {
+    border-top-width: 1px;
+}
+
+.practice-btn {
+    font-size: 9px;
+    text-align: left;
+    max-width: 100%;
+    margin: auto;
+}
+
+@media only screen and (min-width: 600px) {
+    .interview-list p {
+        font-size: 12px;
+    }
+    
+    
+    .practice-btn {
+        font-size: 12px;
+        text-align: left;
+        max-width: 100%;
+        margin: auto;
+    }
+}
+

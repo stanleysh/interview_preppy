@@ -13,9 +13,9 @@ function InterviewCard(props) {
 
     let questionPreview;
     if (props.interviewQuestion.question.length > 30) {
-        questionPreview = <h3>{props.interviewQuestion.question.slice(0,30)}...</h3>
+        questionPreview = <p>{props.interviewQuestion.question.slice(0,30)}...</p>
     } else {
-        questionPreview = <h3>{props.interviewQuestion.question}</h3>
+        questionPreview = <p>{props.interviewQuestion.question}</p>
     }
 
     return (
@@ -23,7 +23,7 @@ function InterviewCard(props) {
         <div className='InterviewCard'>
             <Card style={{ width: '300px', height: '200px'}}>
                 <Card.Body>
-                    <h1 className='questionTitle'>Question: {props.questionNum}</h1>
+                    <h1 className='question-title'>Question: {props.questionNum}</h1>
                     {questionPreview}
                     
                 </Card.Body>

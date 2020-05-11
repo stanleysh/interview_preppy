@@ -5,23 +5,28 @@
     row-gap: 15px;
 }
 
-.custom-footer {
-    justify-content: space-between;
+.modal-title{
+    font-size: 14px;
 }
 
-.ftr-btns {
-    margin: 5px;
+.modal-footer {
+    justify-content: space-between;
+    display: grid;
 }
 
 .ftr-btn {
-    margin: 0px 10px;
-    padding: 4px 15px;
+    margin-right: 10px;
+    font-size: 12px;
+}
+.ftr-btns {
+    margin-right: -5px;
 }
 
 .timer {
-    width: 70%;
     text-align: left;
     font-size: 12px;
+    grid-column-start: 0;
+    grid-column-end: 1;
 }
 
 .timer-counter {
@@ -33,7 +38,7 @@
 }
 
 .tip {
-    font-size: 15px;
+    font-size: 10px;
     margin: 5px 0;
     grid-row-start: 4;
     grid-column-start:1;
@@ -43,7 +48,7 @@
 }
 
 .tip-btn {
-    font-size: 15px;
+    font-size: 10px;
     grid-row-start: 3;
     grid-column-start: 2;
     align-self: center;
@@ -51,7 +56,7 @@
 }
 
 .hidden-tip-script-btn {
-    font-size: 15px;
+    font-size: 10px;
     grid-row-start: 4;
     grid-column-start: 2;
     align-self: center;
@@ -59,7 +64,7 @@
 }
 
 .show-tip-script-btn {
-    font-size: 15px;
+    font-size: 10px;
     grid-row-start: 5;
     grid-column-start: 2;
     align-self: center;
@@ -67,17 +72,17 @@
 }
 
 .hidden-tip-script {
-    font-size: 15px;
+    font-size: 10px;
     grid-row-start: 5;
     grid-column-start:1;
     grid-column-end: 4;
-    margin-bottom: 10px;
+    margin-bottom: 10px; 
     white-space: pre-line;
     text-align: center;
 }
 
 .show-tip-script {
-    font-size: 15px;
+    font-size: 10px;
     grid-row-start: 6;
     grid-column-start:1;
     grid-column-end: 4;
@@ -86,12 +91,13 @@
     text-align: center;
 }
 
-.question-title {
+.modal-question-title {
     grid-column-start: 1;
     grid-column-end: 4;
     text-align: center;
     grid-row-start: 1;
     margin-bottom: 0;
+    font-size: 12px;
 }
 
 .question-description {
@@ -99,6 +105,133 @@
     grid-column-end: 4;
     text-align: center;
     grid-row-start: 2;
-    font-size: 15px;
+    font-size: 10px;
     margin: 0 15px;
+}
+
+@media only screen and (min-width: 768px) {
+    .modal-question-title {
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    .question-description {
+        font-size: 12px;
+    }
+
+    .timer-btn{
+        margin-right: 3px;
+        font-size: 14px;
+    }
+
+    .ftr-btns {
+        margin-right: -10px;
+    }
+
+    .ftr-btn {
+        margin-right: 10px;
+        font-size: 14px;
+    }
+
+    .timer {
+        text-align: left;
+        font-size: 14px;
+    }
+
+    .ftr-btns {
+        margin: 5px;
+    }
+
+    .show-tip-script {
+        margin-bottom: 10px;
+    }
+
+    .tip {
+        font-size: 12px;
+        margin: 5px 0;
+    }
+
+    .modal-title{
+        font-size: 16px;
+    }
+
+    .tip-btn {
+        font-size: 12px;
+    }
+    
+    .hidden-tip-script-btn {
+        font-size: 12px;
+    }
+    
+    .show-tip-script-btn {
+        font-size: 12px;
+    }
+    
+    .hidden-tip-script {
+        font-size: 12px;
+    }
+    
+    .show-tip-script {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .modal-question-title {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    .question-description {
+        font-size: 16px;
+    }
+
+    .timer-btn{
+        margin-right: 3px;
+        font-size: 16px;
+    }
+
+    .ftr-btns {
+        margin-right: -10px;
+    }
+
+    .ftr-btn {
+        margin-right: 10px;
+        font-size: 16px;
+    }
+
+    .timer {
+        text-align: left;
+        font-size: 16px;
+    }
+
+
+    .tip {
+        font-size: 16px;
+        margin: 5px 0;
+    }
+
+    .modal-title{
+        font-size: 26px;
+    }
+
+    .tip-btn {
+        font-size: 16px;
+    }
+    
+    .hidden-tip-script-btn {
+        font-size: 16px;
+    }
+    
+    .show-tip-script-btn {
+        font-size: 16px;
+    }
+    
+    .hidden-tip-script {
+        font-size: 16px;
+    }
+    
+    .show-tip-script {
+        font-size: 16px;
+    }
 }

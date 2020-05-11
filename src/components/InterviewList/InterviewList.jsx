@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './InterviewList.css';
 import Modal from 'react-bootstrap/Modal';
 import QuestionModal from '../QuestionModal/QuestionModal'
+import Button from 'react-bootstrap/Button';
 
 function InterviewList(props) {
     const [show, setShow] = useState(false);
@@ -11,25 +12,16 @@ function InterviewList(props) {
 
     let questionPreview;
     if (props.interviewQuestion.question.length > 30) {
-        questionPreview = <h3>{props.interviewQuestion.question.slice(0,30)}...</h3>
+        questionPreview = <p>{props.interviewQuestion.question.slice(0,30)}...</p>
     } else {
-        questionPreview = <h3>{props.interviewQuestion.question}</h3>
+        questionPreview = <p>{props.interviewQuestion.question}</p>
     }
 
     return (
-        <>
-        <div className='InterviewList'>
-            <Card style={{ width: '300px', height: '200px'}}>
-                <Card.Body>
-                    <h1 className='questionTitle'>Question: {props.questionNum}</h1>
-                    {questionPreview}
-                    
-                </Card.Body>
-                <Card.Footer>
-                    <Button variant="outline-info" className="practice" onClick={handleShow}>Practice Now</Button>
-                </Card.Footer>
-            </Card>
-        </div>
+        <li className="list-group-item interview-list list-group-item-action">
+            <p>Question: {props.questionNum}</p>
+            {questionPreview}
+            <Button variant="outline-info" className="practice-btn" onClick={handleShow}>Practice Now</Button>
         <Modal 
         show={show} 
         onHide={handleClose} 
@@ -50,7 +42,7 @@ function InterviewList(props) {
             demo = {props.demo}
             />
         </Modal>
-    </>
+    </li>
     );
 }
 
