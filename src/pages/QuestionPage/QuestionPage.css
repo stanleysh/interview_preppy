@@ -14,3 +14,10 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     row-gap: 30px;
 }
+
+.new-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+}

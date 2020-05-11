@@ -1,10 +1,12 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import questionService from '../../utils/questionService';
 import './QuestionPage.css';
 import InterviewCard from '../../components/InterviewCard/InterviewCard';
 import NewQuestion from '../../components/NewQuestion/NewQuestion';
 import MediaQuery from 'react-responsive';
 import InterviewList from '../../components/InterviewList/InterviewList';
+import { Link } from 'react-router-dom'
+import Button from 'react-bootstrap/button';
 
 
 class QuestionPage extends Component {
@@ -23,14 +25,18 @@ class QuestionPage extends Component {
                 <h1>Your questions</h1>
                 <MediaQuery maxDeviceWidth={767}>
                     <ul className="list-group">
-                    {this.state.questions.map((interviewQuestion, index) =>
-                            <InterviewList
-                            interviewQuestion = {interviewQuestion}
-                            questionNum = {index + 1}
-                            demo = {true}
-                            />
-                            
-                        )}
+                        {this.state.questions.map((interviewQuestion, index) =>
+                                <InterviewList
+                                interviewQuestion = {interviewQuestion}
+                                questionNum = {index + 1}
+                                demo = {true}
+                                />
+                            )}
+                        <li className="list-group-item list-group-item-action new-question">New Question:                     
+                            <Link to='/questions/form'>
+                                <Button variant="outline-info" className="add-btn">Add New Question</Button>
+                            </Link>
+                        </li>
                     </ul>
                 </MediaQuery>
                 <MediaQuery minDeviceWidth={768}>
