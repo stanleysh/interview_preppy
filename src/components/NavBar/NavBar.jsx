@@ -8,7 +8,7 @@ function NavBar(props) {
         return (
         <div className="App-header">
             <div className='Logo'>
-                <Link to="/" className="logo-holder"><p><img src="https://cdn.auth0.com/blog/react-js/react.png" alt="logo" width="40px"/> Preppy</p></Link>
+                <Link to="/" className="logo-holder"><p><img src={require("./logo/logo_white.png")} alt="logo" width="40px"/> Preppy</p></Link>
             </div>
             <div className='about-info'>
                 <Link to='/about'><Button variant="info" className="nav-buttons">About Us</Button></Link>
