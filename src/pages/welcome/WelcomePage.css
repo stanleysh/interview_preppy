@@ -1,7 +1,7 @@
 .welcome-bar {
     margin: 0px auto;
     display: inline-grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 40%;
     text-align: center;
     grid-gap: 15px;
 }

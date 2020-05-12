@@ -15,8 +15,8 @@ const WelcomePage = (props) => {
                     <p>I'm here to provide you with the most relevant interview questions for the industry of your choice, curated answer scripts and tools to help you prep with confidence!</p>
                 </div> 
                 <div className="welcome-bar fade-in-3">
-                    <Link to='/questions'><Button variant="outline-info fade-in" className='your-questions welcome-btn'>Start Prepping!</Button></Link>
-                    <Link to='/'><Button variant="outline-info welcome-btn fade-in" onClick={props.handleLogout}>Logout</Button></Link>
+                    <Link to='/questions'><Button variant="outline-info welcome-btn">Start Prepping!</Button></Link>
+                    <Link to='/'><Button variant="outline-info welcome-btn" onClick={props.handleLogout}>Logout</Button></Link>
                 </div>
             </>
         )
